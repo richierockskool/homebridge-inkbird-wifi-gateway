@@ -1,9 +1,9 @@
 {
   "private": true,
-  "displayName": "Plugin Name",
-  "name": "homebridge-plugin-name",
+  "displayName": "Inkbird WiFi Gateway",
+  "name": "IBS-M1",
   "version": "1.0.0",
-  "description": "A short description about what your plugin does.",
+  "description": "Control Inkbird BT devices through the WiFi Gateway App",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
