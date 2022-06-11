@@ -1,6 +1,6 @@
 {
   "private": false,
-  "displayName": "Homebridge Inkbird WiFi Gateway",
+  "displayName": "homebridge inkbird wifi gateway",
   "name": "homebridge-InkBirdIBS-M1",
   "author": "R.Jagger",
   "version": "1.0.0",
@@ -45,5 +45,5 @@
     "rimraf": "^3.0.2",
     "ts-node": "^10.3.0",
     "typescript": "^4.4.4"
-  }
+  
 }
