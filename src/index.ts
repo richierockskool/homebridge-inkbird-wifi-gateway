@@ -1,6 +1,6 @@
 import { API } from 'homebridge';
 
-import { PLATFORM_NAME } from './settings';
+import { PLATFORM_NAME = 'InkbirdWiFiGatewayHomebridgePlugin' } from './settings';
 import { ExampleHomebridgePlatform } from './platform';
 
 /**
