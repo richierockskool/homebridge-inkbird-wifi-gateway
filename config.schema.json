@@ -40,6 +40,6 @@
             "required": false,
             "minimum" : 0,
             "maximum" : 4
-         }
+         },
     }
     
