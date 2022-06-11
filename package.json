@@ -25,7 +25,6 @@
     "prepublishOnly": "npm run lint && npm run build"
   },
   "keywords": {
-    "homebridgeplugin",
     "wifi",
     "bluetooth",
     "temperature",
