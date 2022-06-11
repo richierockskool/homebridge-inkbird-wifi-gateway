@@ -1,6 +1,6 @@
 {
-  "private": false,
-  "displayName": "homebridge inkbird wifi gateway",
+  "private": true,
+  "displayName": "homebridgeinkbirdwifigateway",
   "name": "homebridge-InkBirdIBS-M1",
   "author": "R.Jagger",
   "version": "1.0.0",
