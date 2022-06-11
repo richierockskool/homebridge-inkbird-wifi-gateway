@@ -24,7 +24,7 @@
     "build": "rimraf ./dist && tsc",
     "prepublishOnly": "npm run lint && npm run build"
   },
-  "keywords": [
+  "keywords": {
     "homebridge-plugin"
     "WiFi"
     "bluetooth",
@@ -33,7 +33,7 @@
     "Inkbird",
     "IBS-M1",
     "homebridge"
-  ],
+  },
   "dependencies": {},
   "devDependencies": {
     "@types/node": "^16.10.9",
