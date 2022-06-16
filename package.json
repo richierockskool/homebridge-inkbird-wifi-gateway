@@ -8,7 +8,7 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git://github.com/richierockskool/homebridge-InkBirdIBS-M1.git"
+    "url": "git://github.com/richierockskool/homebridge-inkbird-gateway.git"
   },
   "keywords": [
      "homebridge-plugin",
@@ -22,7 +22,7 @@
      "homebridge"
    ],
   "bugs": {
-    "url": "https://github.com/richierockskool/homebridge-InkBirdIBS-M1/issues"
+    "url": "https://github.com/richierockskool/homebridge-inkbird-gateway/issues"
   },
   "engines": {
     "node": ">=14.18.1",
