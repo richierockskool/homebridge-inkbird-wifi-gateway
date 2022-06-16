@@ -1,6 +1,6 @@
 import { Service, PlatformAccessory, CharacteristicValue } from 'homebridge';
 
-import { ExampleHomebridgePlatform } from './platform';
+import { Homebridge InkBird Wifi Gateway} from './platform';
 
 /**
  * Platform Accessory
