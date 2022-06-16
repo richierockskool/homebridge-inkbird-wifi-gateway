@@ -1,15 +1,14 @@
 {
-  "pluginAlias": "InkbirdWiFiGatewayHomebridgePlugin",
+  "pluginAlias": "InkbirdWiFiGateway",
   "pluginType": "accessory",
-  "singular": true,
-  "schema": {
+   "schema": {
     "type": "object",
     "properties": {
       "name": {
-        "title": "Name of the sensor",
+        "title": "Pool Sensor",
         "type": "string",
         "required": true,
-        "default": "Example Dynamic Platform"
+     
       },
       "model": {
             "type": "string",
