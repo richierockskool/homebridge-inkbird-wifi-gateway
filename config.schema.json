@@ -7,7 +7,7 @@
       "name": {
         "title": "Pool Sensor",
         "type": "string",
-        "required": true,
+        "required": true
      
       },
       "model": {
