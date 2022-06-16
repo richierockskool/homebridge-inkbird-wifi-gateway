@@ -10,6 +10,17 @@
     "type": "git",
     "url": "git://github.com/richierockskool/homebridge-InkBirdIBS-M1.git"
   },
+  "keywords": [
+     "homebridge-plugin",
+     "bluetooth",
+     "temperature",
+     "humidity",
+     "sensor",
+     "Inkbird",
+     "IBS-M1 WIFI Gateway",
+     "IBS-PO1/B",
+     "homebridge"
+   ],
   "bugs": {
     "url": "https://github.com/richierockskool/homebridge-InkBirdIBS-M1/issues"
   },
