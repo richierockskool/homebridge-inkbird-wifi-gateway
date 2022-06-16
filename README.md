@@ -4,8 +4,10 @@ A homebridge-plugin for the Inkbird bluetooth pool temperature sensors.
 ### Features:
 - Temperature 
 - Battery level
+- Wifi Gateway IBS-M1S
 - Supported sensors:
-   - IBS-PO1/B
+   - IBS-PO1/B 
+   
    
    ### 2. Update homebridge configuration file.
 ```
