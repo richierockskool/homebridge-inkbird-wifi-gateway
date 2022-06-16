@@ -12,7 +12,7 @@
       },
       "model": {
             "type": "string",
-            "enum": [ "IBS-TH1", "not in list - try it anyway" ],
+            "enum": [ "IBS-PO1/B", "not in list - try it anyway" ],
             "title": "Model number (i.e. IBS-PO1/B, leave empty if not sure)",
             "required": true
     },
