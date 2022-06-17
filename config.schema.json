@@ -1,5 +1,5 @@
 {
-  "pluginAlias": "inkbird-wifi-gateway-homebridge-plugin",
+  "pluginAlias": "homebridge-inkbird-wifi-gateway-plugin",
   "pluginType": "platform",
    "schema": {
     "type": "object",
