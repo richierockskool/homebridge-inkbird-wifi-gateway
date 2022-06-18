@@ -1,10 +1,10 @@
 import { API, DynamicPlatformPlugin, Logger, PlatformAccessory, PlatformConfig, Service, Characteristic } from 'homebridge';
 
 import { PLATFORM_NAME, PLUGIN_NAME } from './settings';
-import { Ibs_m1ControllerAccessory } from './platformAccessory';
+import { Ibsm1ControllerAccessory } from './platformAccessory';
 
 /* eslint-disable */
-const { ibs_m1 } = require('ibs_m1_raw');
+const { ibsm1 } = require('ibsm1_raw');
 
 /**
  * HomebridgePlatform
@@ -69,22 +69,22 @@ export class Ibs_m1ControllerPlatform implements DynamicPlatformPlugin {
         port: 8189,
       };
 
-      const ibs_m1Instance = new ibs_m1(opts);
+      const ibsm1Instance = new ibsm1(opts);
 
       if (existingAccessory) {
         // the accessory already exists
         this.log.info('Restoring controller from cache:', existingAccessory.displayName);
 
         // if you need to update the accessory.context then you should run `api.updatePlatformAccessories`. eg.:
-        existingAccessory.context.ibs_m1 = ibs_m1Instance;
+        existingAccessory.context.ibs_m1 = ibsm1Instance;
         this.api.updatePlatformAccessories([existingAccessory]);
 
         // create the accessory handler for the restored accessory
         // this is imported from `platformAccessory.ts`
-        new ibs_m1ControllerAccessory(this, existingAccessory);
+        new ibsm1ControllerAccessory(this, existingAccessory);
 
         // Status is probably stale, refresh it
-        const status = await ibs_m1Instance.getStatus();
+        const status = await ibsm1Instance.getStatus();
         if (status)
         {
           this.log.info('Controller found, status updated: ' + existingAccessory.displayName);
@@ -99,29 +99,29 @@ export class Ibs_m1ControllerPlatform implements DynamicPlatformPlugin {
 
         this.log.info('Controller created:', controller.displayName);
 
-        const status = await ibs_m1Instance.getStatus();
+        const status = await ibsm1Instance.getStatus();
 
         if (status) {
           
           this.log.info('Controller found, status updated: ' + controller.displayName);
 
           // create a new accessory
-          const ibs_m1Accessory = new this.api.platformAccessory(controller.displayName ?? controller.address, uuid);
+          const ibsm1Accessory = new this.api.platformAccessory(controller.displayName ?? controller.address, uuid);
 
           // store a copy of the device object in the `accessory.context`
           // the `context` property can be used to store any data about the accessory you may need
-          ibs_m1Accessory.context.config = controller;
-          ibs_m1Accessory.context.ibs_m1 = ibs_m1Instance;
+          ibsm1Accessory.context.config = controller;
+          ibsm1Accessory.context.ibsm1 = ibsm1Instance;
 
           // Update recent status (initial status)
-          ibs_m1Accessory.context.lastStatus = status;
+          ibsm1Accessory.context.lastStatus = status;
 
           // create the accessory handler for the newly create accessory
           // this is imported from `platformAccessory.ts`
-          new ibs_m1ControllerAccessory(this, ibs_m1Accessory);
+          new ibsm1ControllerAccessory(this, ibsm1Accessory);
 
           // link the accessory to your platform
-          this.api.registerPlatformAccessories(PLUGIN_NAME, PLATFORM_NAME, [ibs_m1Accessory]);
+          this.api.registerPlatformAccessories(PLUGIN_NAME, PLATFORM_NAME, [ibsm1Accessory]);
       }
     }
   }
