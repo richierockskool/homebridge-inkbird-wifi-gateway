@@ -36,10 +36,10 @@ A homebridge-plugin for the Inkbird bluetooth pool temperature sensors.
                               But be warned, you might get very strange values!!!
 - mac_address     (optional): Put the MAC-address of the sensor if you know it.
                               If not, leave the value open and the plugin will choose any sensor it finds that passes the plausibility checks. In the log you will get a message like this:
-                              `7/6/2020 12:39:05 [Garden TH Sensor] Peripheral with MAC 50:51:a9:7d:fc:e9 found - stop scanning`
+                              `6/6/2022 12:39:05 [Wifi Gateway] Peripheral with MAC e8:db:84:b6:9c:e6 found - stop scanning`
                               There you have your MAC. Copy it to your configuration in this format ("xx:xx:xx:xx:xx:xx") to lock only to this sensor.
 - update_interval (optional): If you specify an update interval (in seconds) the plugin will automatically refresh the values so you have
-                              a faster response for your value. Also you need to configure this option, if you want the Eve history to be
+                              a faster response for your value. Also you need to configure this option, if you want the Inkbird history to be
                               filled with values. But be advised that this might reduce your batteries lifetime, so don't choose it too short.
 - storage         (optional): Where do you want the Eve history to be stored (`filesystem` (default) or `googleDrive` (not tested)).
 - loglevel        (optional): The log level at start of the plugin - smaller numbers lead to less messages
