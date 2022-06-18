@@ -13,8 +13,8 @@ import {
   PlatformConfig,
 } from "homebridge";
 
-const PLUGIN_NAME = "homebridge-dynamic-platform-example";
-const PLATFORM_NAME = "ExampleDynamicPlatform";
+const PLUGIN_NAME = "homebridge-inkbird-wifi-gateway-platform";
+const PLATFORM_NAME = "homebridge-inkbird-wifi-gateway-platform";
 
 /*
  * IMPORTANT NOTICE
