@@ -1,7 +1,8 @@
-import { API, DynamicPlatformPlugin, Logger, PlatformAccessory, PlatformConfig, Service, Characteristic } from 'homebridge';
+import { API, DynamicPlatformPlugin, Logger, PlatformAccessory, PlatformConfig, Service, Characteristic }
+  from 'homebridge';
 
 import { PLATFORM_NAME, PLUGIN_NAME } from './settings';
-import { ExamplePlatformAccessory } from './platformAccessory';
+import { HomebridgeInkbirdWifiGatewayPlatformAccessory } from './platformAccessory';
 
 /**
  * HomebridgePlatform
@@ -20,7 +21,7 @@ export class HomebridgeInkbirdWifiGatewayPlatform implements DynamicPlatformPlug
     public readonly config: PlatformConfig,
     public readonly api: API,
   ) {
-    this.log.debug('Finished initializing platform:', this.config.name);
+    this.log.debug('Finished initializing homebridge-inkbird-wifi-gateway-platform:', this.config.name);
 
     // When this event is fired it means Homebridge has restored all cached accessories from disk.
     // Dynamic Platform plugins should only register new accessories after this event was fired,
@@ -56,12 +57,12 @@ export class HomebridgeInkbirdWifiGatewayPlatform implements DynamicPlatformPlug
     // or a user-defined array in the platform config.
     const exampleDevices = [
       {
-        exampleUniqueId: 'ABCD',
-        exampleDisplayName: 'Bedroom',
+        exampleUniqueId: 'IBS-M1',
+        exampleDisplayName: 'Backyard',
       },
       {
-        exampleUniqueId: 'EFGH',
-        exampleDisplayName: 'Kitchen',
+        exampleUniqueId: 'IBS-PO1/B',
+        exampleDisplayName: 'Pool',
       },
     ];
 
@@ -87,7 +88,7 @@ export class HomebridgeInkbirdWifiGatewayPlatform implements DynamicPlatformPlug
 
         // create the accessory handler for the restored accessory
         // this is imported from `platformAccessory.ts`
-        new ExamplePlatformAccessory(this, existingAccessory);
+        new HomebridgeInkbirdWifiGatewayPlatformAccessory(this, existingAccessory);
 
         // it is possible to remove platform accessories at any time using `api.unregisterPlatformAccessories`, eg.:
         // remove platform accessories when no longer present
@@ -106,7 +107,7 @@ export class HomebridgeInkbirdWifiGatewayPlatform implements DynamicPlatformPlug
 
         // create the accessory handler for the newly create accessory
         // this is imported from `platformAccessory.ts`
-        new ExamplePlatformAccessory(this, accessory);
+        new HomebridgeInkbirdWifiGatewayPlatformAccessory(this, accessory);
 
         // link the accessory to your platform
         this.api.registerPlatformAccessories(PLUGIN_NAME, PLATFORM_NAME, [accessory]);
