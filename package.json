@@ -1,7 +1,7 @@
 {
   "private": false,
-  "displayName": "Homebridge Inkbird Wifi Gateway",
-  "name": "homebridge-inkbird-gateway",
+  "displayName": "Homebridge Inkbird Wifi Gateway Platform",
+  "name": "homebridge-inkbird-wifi-gateway-platform",
   "author": "R.Jagger",
   "version": "1.0.0",
   "description": "Control Inkbird BT devices through the WiFi Gateway App",
@@ -14,7 +14,6 @@
      "homebridge-plugin",
      "bluetooth",
      "temperature",
-     "humidity",
      "sensor",
      "Inkbird",
      "IBS-M1 WIFI Gateway",
