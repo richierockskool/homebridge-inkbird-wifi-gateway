@@ -2,7 +2,7 @@
   "pluginAlias": "homebridge-inkbird-wifi-gateway-platform",
   "pluginType": "platform",
    "schema": {
-    "type": "object",
+    "type": "accessory",
     "properties": {
       "name": {
         "title": "TemperatureSensor",
