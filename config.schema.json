@@ -5,7 +5,7 @@
     "type": "object",
     "properties": {
       "name": {
-        "title": "Pool Sensor",
+        "title": "TemperatureSensor",
         "type": "string",
         "required": true
      
@@ -25,7 +25,7 @@
             "type": "number",
             "title": "Update interval in seconds",
             "required": false,
-            "minimum" : 15
+            "minimum" : 600
 },
       "storage": {
             "type": "string",
