@@ -20,6 +20,8 @@ export class TemperatureSensorAccessory {
     CurrentTemperature: -270,
   };
 
+  static existingAccessory: string;
+
   constructor(
     private readonly platform: HomebridgeInkbirdWifiGatewayPlatform,
     private readonly accessory: PlatformAccessory,

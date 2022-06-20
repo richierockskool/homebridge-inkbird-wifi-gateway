@@ -58,7 +58,7 @@ export class HomebridgeInkbirdWifiGatewayPlatform implements DynamicPlatformPlug
     // EXAMPLE ONLY
     // A real plugin you would discover accessories from the local network, cloud services
     // or a user-defined array in the platform config.
-    const exampleDevices = [
+    const devicesDiscovered = [
       {
         exampleUniqueId: 'IBS-M1',
         exampleDisplayName: 'Backyard',
@@ -70,12 +70,12 @@ export class HomebridgeInkbirdWifiGatewayPlatform implements DynamicPlatformPlug
     ];
 
     // loop over the discovered devices and register each one if it has not already been registered
-    for (const device of exampleDevices) {
+    for (const deviceDiscovered of devicesDiscovered) {
 
       // generate a unique id for the accessory this should be generated from
       // something globally unique, but constant, for example, the device serial
       // number or MAC address
-      const uuid = this.api.hap.uuid.generate(device.exampleUniqueId);
+      const uuid = this.api.hap.uuid.generate(deviceDiscovered.exampleUniqueId);
 
       // see if an accessory with the same uuid has already been registered and restored from
       // the cached devices we stored in the `configureAccessory` method above
@@ -99,14 +99,14 @@ export class HomebridgeInkbirdWifiGatewayPlatform implements DynamicPlatformPlug
         // this.log.info('Removing existing accessory from cache:', existingAccessory.displayName);
       } else {
         // the accessory does not yet exist, so we need to create it
-        this.log.info('Adding new accessory:', device.exampleDisplayName);
+        this.log.info('Temperature Sensor:', TemperatureSensorAccessory);
 
         // create a new accessory
-        const accessory = new this.api.platformAccessory(device.exampleDisplayName, uuid);
+        const accessory = new this.api.platformAccessory(TemperatureSensorAccessory.existingAccessory, uuid);
 
         // store a copy of the device object in the `accessory.context`
         // the `context` property can be used to store any data about the accessory you may need
-        accessory.context.device = device;
+        accessory.context.device = TemperatureSensorAccessory;
 
         // create the accessory handler for the newly create accessory
         // this is imported from `platformAccessory.ts`
