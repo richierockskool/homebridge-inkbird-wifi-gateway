@@ -8,7 +8,7 @@ import { HomebridgeInkbirdWifiGatewayPlatform } from './platform';
  * An instance of this class is created for each accessory your platform registers
  * Each accessory may expose multiple services of different service types.
  */
-export class HomebridgeInkbirdWifiGatewayPlatformAccessory {
+export class TemperatureSensorAccessory {
   private service: Service;
 
   /**
@@ -17,7 +17,7 @@ export class HomebridgeInkbirdWifiGatewayPlatformAccessory {
    */
   private exampleStates = {
     On: false,
-    Brightness: 100,
+    CurrentTemperature: -270,
   };
 
   constructor(
@@ -26,7 +26,7 @@ export class HomebridgeInkbirdWifiGatewayPlatformAccessory {
   ) {
 
     // set accessory information
-    this.accessory.getService(this.platform.Service.AccessoryInformation)!
+    this.accessory.getService(this.platform.Service.TemperatureSensor)!
       .setCharacteristic(this.platform.Characteristic.Manufacturer, 'InkBird')
       .setCharacteristic(this.platform.Characteristic.Model, 'InkBird-Model')
       .setCharacteristic(this.platform.Characteristic.SerialNumber, 'InkBird-Serial');
@@ -38,7 +38,7 @@ export class HomebridgeInkbirdWifiGatewayPlatformAccessory {
 
     // set the service name, this is what is displayed as the default name on the Home app
     // in this example we are using the name we stored in the `accessory.context` in the `discoverDevices` method.
-    this.service.setCharacteristic(this.platform.Characteristic.Name, accessory.context.device.exampleDisplayName);
+    this.service.setCharacteristic(this.platform.Characteristic.CurrentTemperature, accessory.context.device.TemperatureSensor);
 
     // each service must implement at-minimum the "required characteristics" for the given service type
     // see https://developers.homebridge.io/#/service/Lightbulb
@@ -50,7 +50,7 @@ export class HomebridgeInkbirdWifiGatewayPlatformAccessory {
 
     // register handlers for the Brightness Characteristic
     this.service.getCharacteristic(this.platform.Characteristic.TemperatureDisplayUnits)
-      .onSet(this.setBrightness.bind(this));       // SET - bind to the 'setBrightness` method below
+      .onSet(this.setCurrentTemperature.bind(this));       // SET - bind to the 'setBrightness` method below
 
     /**
      * Creating multiple services of the same type.
@@ -64,8 +64,8 @@ export class HomebridgeInkbirdWifiGatewayPlatformAccessory {
      */
 
     // Example: add two "motion sensor" services to the accessory
-    const motionSensorOneService = this.accessory.getService('Pool Sensor One Name') ||
-      this.accessory.addService(this.platform.Service.MotionSensor, 'Motion Sensor One Name', 'YourUniqueIdentifier-1');
+    const temperatureSensorOneService = this.accessory.getService('Pool Sensor One Name') ||
+      this.accessory.addService(this.platform.Service.TemperatureSensor, 'Motion Sensor One Name', 'YourUniqueIdentifier-1');
 
     const motionSensorTwoService = this.accessory.getService('Motion Sensor Two Name') ||
       this.accessory.addService(this.platform.Service.MotionSensor, 'Motion Sensor Two Name', 'YourUniqueIdentifier-2');
@@ -79,17 +79,17 @@ export class HomebridgeInkbirdWifiGatewayPlatformAccessory {
      * the `updateCharacteristic` method.
      *
      */
-    let motionDetected = false;
+    let temperatureDetected = false;
     setInterval(() => {
       // EXAMPLE - inverse the trigger
-      motionDetected = !motionDetected;
+      temperatureDetected = !temperatureDetected;
 
       // push the new value to HomeKit
-      motionSensorOneService.updateCharacteristic(this.platform.Characteristic.MotionDetected, motionDetected);
-      motionSensorTwoService.updateCharacteristic(this.platform.Characteristic.MotionDetected, !motionDetected);
+      temperatureSensorOneService.updateCharacteristic(this.platform.Characteristic.CurrentTemperature, temperatureDetected);
+      motionSensorTwoService.updateCharacteristic(this.platform.Characteristic.MotionDetected, !temperatureDetected);
 
-      this.platform.log.debug('Triggering temperatureSensorOneService:', motionDetected);
-      this.platform.log.debug('Triggering motionSensorTwoService:', !motionDetected);
+      this.platform.log.debug('Triggering temperatureSensorOneService:', temperatureDetected);
+      this.platform.log.debug('Triggering motionSensorTwoService:', !temperatureDetected);
     }, 10000);
   }
 
@@ -126,18 +126,20 @@ export class HomebridgeInkbirdWifiGatewayPlatformAccessory {
     // if you need to return an error to show the device as "Not Responding" in the Home app:
     // throw new this.platform.api.hap.HapStatusError(this.platform.api.hap.HAPStatus.SERVICE_COMMUNICATION_FAILURE);
 
-    return isOn;
+    const currentValue = -270;
+
+    return currentValue;
   }
 
   /**
    * Handle "SET" requests from HomeKit
    * These are sent when the user changes the state of an accessory, for example, changing the Brightness
    */
-  async setBrightness(value: CharacteristicValue) {
+  async setCurrentTemperature(value: CharacteristicValue) {
     // implement your own code to set the brightness
-    this.exampleStates.Brightness = value as number;
+    this.exampleStates.CurrentTemperature = value as number;
 
-    this.platform.log.debug('Set Characteristic Temperatue -> ', value);
+    this.platform.log.debug('GET CurrentTemperatue -> ', value);
   }
 
 }

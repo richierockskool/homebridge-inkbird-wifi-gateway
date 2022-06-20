@@ -2,13 +2,16 @@ import { API, DynamicPlatformPlugin, Logger, PlatformAccessory, PlatformConfig, 
   from 'homebridge';
 
 import { PLATFORM_NAME, PLUGIN_NAME } from './settings';
-import { HomebridgeInkbirdWifiGatewayPlatformAccessory } from './platformAccessory';
+import { TemperatureSensorAccessory } from './platformAccessory';
 
 /**
  * HomebridgePlatform
  * This class is the main constructor for your plugin, this is where you should
  * parse the user config and discover/register accessories with Homebridge.
  */
+module.exports = (api) => {
+  api.registerPlatform('Homebridge Inkbird Wifi Gateway Platform', HomebridgeInkbirdWifiGatewayPlatform);
+};
 export class HomebridgeInkbirdWifiGatewayPlatform implements DynamicPlatformPlugin {
   public readonly Service: typeof Service = this.api.hap.Service;
   public readonly Characteristic: typeof Characteristic = this.api.hap.Characteristic;
@@ -21,7 +24,7 @@ export class HomebridgeInkbirdWifiGatewayPlatform implements DynamicPlatformPlug
     public readonly config: PlatformConfig,
     public readonly api: API,
   ) {
-    this.log.debug('Finished initializing homebridge-inkbird-wifi-gateway-platform:', this.config.name);
+    this.log.debug('Finished initializing Homebridge Inkbird Wifi Gateway Platform:', this.config.name);
 
     // When this event is fired it means Homebridge has restored all cached accessories from disk.
     // Dynamic Platform plugins should only register new accessories after this event was fired,
@@ -88,7 +91,7 @@ export class HomebridgeInkbirdWifiGatewayPlatform implements DynamicPlatformPlug
 
         // create the accessory handler for the restored accessory
         // this is imported from `platformAccessory.ts`
-        new HomebridgeInkbirdWifiGatewayPlatformAccessory(this, existingAccessory);
+        new TemperatureSensorAccessory(this, existingAccessory);
 
         // it is possible to remove platform accessories at any time using `api.unregisterPlatformAccessories`, eg.:
         // remove platform accessories when no longer present
@@ -107,7 +110,7 @@ export class HomebridgeInkbirdWifiGatewayPlatform implements DynamicPlatformPlug
 
         // create the accessory handler for the newly create accessory
         // this is imported from `platformAccessory.ts`
-        new HomebridgeInkbirdWifiGatewayPlatformAccessory(this, accessory);
+        new TemperatureSensorAccessory(this, accessory);
 
         // link the accessory to your platform
         this.api.registerPlatformAccessories(PLUGIN_NAME, PLATFORM_NAME, [accessory]);
