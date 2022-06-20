@@ -8,7 +8,7 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git://github.com/richierockskool/homebridge-inkbird-gateway.git"
+    "url": "git://github.com/Richierockskool/Homebridge_Inkbird_Wifi_Gateway.git"
   },
   "keywords": [
      "homebridge-plugin",
@@ -21,7 +21,7 @@
      "homebridge"
    ],
   "bugs": {
-    "url": "https://github.com/richierockskool/homebridge-inkbird-gateway/issues"
+    "url": "https://github.com/Richierockskool/Homebridge_Inkbird_Wifi_Gateway/issues"
   },
   "engines": {
     "node": ">=14.18.1",
@@ -34,7 +34,9 @@
     "build": "rimraf ./dist && tsc",
     "prepublishOnly": "npm run lint && npm run build"
   },
-  "dependencies": {},
+  "dependencies": {"my_dep": "^1.0.0",
+    "another_dep": "~2.2.0"},
+    
   "devDependencies": {
     "@types/node": "^16.10.9",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
