@@ -34,8 +34,7 @@
     "build": "rimraf ./dist && tsc",
     "prepublishOnly": "npm run lint && npm run build"
   },
-  "dependencies": {"my_dep": "^1.0.0",
-    "another_dep": "~2.2.0"},
+  "dependencies": {},
     
   "devDependencies": {
     "@types/node": "^16.10.9",
