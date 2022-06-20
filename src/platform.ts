@@ -2,7 +2,7 @@ import { API, DynamicPlatformPlugin, Logger, PlatformAccessory, PlatformConfig, 
   from 'homebridge';
 
 import { PLATFORM_NAME, PLUGIN_NAME } from './settings';
-import { TemperatureSensorAccessory } from './platformAccessory';
+import { HomebridgeTemperatureSensorAccessory } from './platformAccessory';
 
 /**
  * HomebridgePlatform
@@ -91,7 +91,7 @@ export class HomebridgeInkbirdWifiGatewayPlatform implements DynamicPlatformPlug
 
         // create the accessory handler for the restored accessory
         // this is imported from `platformAccessory.ts`
-        new TemperatureSensorAccessory(this, existingAccessory);
+        new HomebridgeTemperatureSensorAccessory(this, existingAccessory);
 
         // it is possible to remove platform accessories at any time using `api.unregisterPlatformAccessories`, eg.:
         // remove platform accessories when no longer present
@@ -99,18 +99,18 @@ export class HomebridgeInkbirdWifiGatewayPlatform implements DynamicPlatformPlug
         // this.log.info('Removing existing accessory from cache:', existingAccessory.displayName);
       } else {
         // the accessory does not yet exist, so we need to create it
-        this.log.info('Temperature Sensor:', TemperatureSensorAccessory);
+        this.log.info('Temperature Sensor:', HomebridgeTemperatureSensorAccessory);
 
         // create a new accessory
-        const accessory = new this.api.platformAccessory(TemperatureSensorAccessory.existingAccessory, uuid);
+        const accessory = new this.api.platformAccessory(HomebridgeTemperatureSensorAccessory.existingAccessory, uuid);
 
         // store a copy of the device object in the `accessory.context`
         // the `context` property can be used to store any data about the accessory you may need
-        accessory.context.device = TemperatureSensorAccessory;
+        accessory.context.device = HomebridgeTemperatureSensorAccessory;
 
         // create the accessory handler for the newly create accessory
         // this is imported from `platformAccessory.ts`
-        new TemperatureSensorAccessory(this, accessory);
+        new HomebridgeTemperatureSensorAccessory(this, accessory);
 
         // link the accessory to your platform
         this.api.registerPlatformAccessories(PLUGIN_NAME, PLATFORM_NAME, [accessory]);
