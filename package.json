@@ -34,11 +34,7 @@
     "build": "rimraf ./dist && tsc",
     "prepublishOnly": "npm run lint && npm run build"
   },
-  "dependencies": {"gatsby": "^2.32.7",
-    "gatsby-plugin-meta-redirect": "^1.1.1",
-    "gatsby-theme-doctornpm": "^1.9.0",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0"},
+  "dependencies": {},
     
   "devDependencies": {
     "@types/node": "^16.10.9",
