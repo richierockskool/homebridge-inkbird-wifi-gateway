@@ -8,7 +8,7 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git://github.com/Richierockskool/Homebridge_Inkbird_Wifi_Gateway.git"
+    "url": "git://github.com/richierockskool/homebridge-inkbird-wifi-gateway.git"
   },
   "keywords": [
      "homebridge-plugin",
@@ -21,7 +21,7 @@
      "homebridge"
    ],
   "bugs": {
-    "url": "https://github.com/Richierockskool/Homebridge_Inkbird_Wifi_Gateway/issues"
+    "url": "https://github.com/richierockskool/homebridge-inkbird-wifi-gateway/issues"
   },
   "engines": {
     "node": ">=14.18.1",
