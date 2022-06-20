@@ -6,4 +6,4 @@ export const PLATFORM_NAME = 'homebridge-inkbird-wifi-gateway-platform';
 /**
  * This must match the name of your plugin as defined the package.json
  */
-export const PLUGIN_NAME = 'homebridge-inkbird-wifi-gateway';
+export const PLUGIN_NAME = 'homebridge-inkbird-wifi-gateway-platform';
