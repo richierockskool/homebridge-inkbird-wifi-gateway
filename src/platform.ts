@@ -4,6 +4,8 @@ import { API, DynamicPlatformPlugin, Logger, PlatformAccessory, PlatformConfig, 
 import { PLATFORM_NAME, PLUGIN_NAME } from './settings';
 import { HomebridgeTemperatureSensorAccessory } from './platformAccessory';
 
+
+
 /**
  * HomebridgePlatform
  * This class is the main constructor for your plugin, this is where you should
@@ -18,6 +20,7 @@ export class HomebridgeInkbirdWifiGatewayPlatform implements DynamicPlatformPlug
 
   // this is used to track restored cached accessories
   public readonly accessories: PlatformAccessory[] = [];
+  Accessory!: PlatformAccessory<HomebridgeInkbirdWifiGatewayPlatform>;
 
   constructor(
     public readonly log: Logger,
@@ -102,7 +105,7 @@ export class HomebridgeInkbirdWifiGatewayPlatform implements DynamicPlatformPlug
         this.log.info('Temperature Sensor:', HomebridgeTemperatureSensorAccessory);
 
         // create a new accessory
-        const accessory = new this.api.platformAccessory(HomebridgeTemperatureSensorAccessory.existingAccessory, uuid);
+        const accessory = new this.api.platformAccessory('Homebridge Temperature Sensor Accessory', uuid);
 
         // store a copy of the device object in the `accessory.context`
         // the `context` property can be used to store any data about the accessory you may need
@@ -116,5 +119,14 @@ export class HomebridgeInkbirdWifiGatewayPlatform implements DynamicPlatformPlug
         this.api.registerPlatformAccessories(PLUGIN_NAME, PLATFORM_NAME, [accessory]);
       }
     }
+    /**
+   * REQUIRED - Homebridge will call the "configureAccessory" method once for every cached
+   * accessory restored
+   */
+    this.configureAccessory(this.Accessory); {
+      this.accessories.push(this.Accessory);
+    }
   }
 }
+
+
