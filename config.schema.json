@@ -2,18 +2,18 @@
   "pluginAlias": "homebridge-inkbird-wifi-gateway-platform",
   "pluginType": "platform",
    "schema": {
-    "type": "accessory",
+    "type": "object",
     "properties": {
       "name": {
-        "title": "TemperatureSensor",
+        "title": "Name",
         "type": "string",
         "required": true
      
       },
       "model": {
             "type": "string",
-            "enum": [ "IBS-PO1/B", "not in list - try it anyway" ],
-            "title": "Model number (i.e. IBS-PO1/B, leave empty if not sure)",
+            "enum": [ "IBS-M1", "not in list - try it anyway" ],
+            "title": "Model number (i.e. IBS-M1, leave empty if not sure)",
             "required": true
     },
       "mac_address": {
