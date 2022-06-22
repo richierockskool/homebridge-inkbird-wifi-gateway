@@ -10,7 +10,7 @@ import { HomebridgeTemperatureSensorAccessory } from './platformAccessory';
  * parse the user config and discover/register accessories with Homebridge.
  */
 module.exports = (api) => {
-  api.registerPlatform('Homebridge Inkbird Wifi Gateway Platform', HomebridgeInkbirdWifiGatewayPlatform);
+  api.registerPlatform('Homebridge Inkbird Wifi Gateway Platform', homebridge-inkbird-wifi-gateway-platform);
 };
 export class HomebridgeInkbirdWifiGatewayPlatform implements DynamicPlatformPlugin {
   public readonly Service: typeof Service = this.api.hap.Service;
