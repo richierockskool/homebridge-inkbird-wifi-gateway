@@ -13,13 +13,13 @@ A homebridge-plugin for the Inkbird bluetooth pool temperature sensors.
 ```
 "accessories": [
    {
-      "accessory"       : "InkbirdWifiGateway",
+      "paltform"       : "homebridge-inkbird-wifi-gateway-platform",
       "plugin_map"      :
       {
          "plugin_name": "homebridge-inkbird-wifi-gateway-platform",
          "index": 0
       },
-      "name"            : "Pool Temperature Sensor Wifi Gateway",
+      "name"            : "Homebridge Inkbird Wifi Gateway Platform",
       "model"           : "IBS-M1S",
       "mac_address"     : "e8:db:84:b6:9c:e6",
       "update_interval" : 600,
