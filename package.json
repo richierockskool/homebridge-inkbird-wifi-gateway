@@ -1,49 +1,118 @@
 {
   
   "displayName": "Homebridge Inkbird Wifi Gateway",
+  
   "name": "homebridge-inkbird-wifi-gateway",
+  
   "author": "R.Jagger",
+  
   "version": "1.0.0",
+  
   "description": "Control Inkbird BT devices through the WiFi Gateway App",
+  
   "license": "Apache-2.0",
+  
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/richierockskool/homebridge-inkbird-wifi-gateway.git"
+  
+    
+  "type": "git",
+  
+    
+  "url": "git+https://github.com/richierockskool/homebridge-inkbird-wifi-gateway.git"
+  
   },
+  
   "keywords": [
-    "homebridge-plugin",
-    "bluetooth",
-    "temperature",
-    "sensor",
-    "Inkbird",
-    "IBS-M1 WIFI Gateway",
-    "IBS-PO1/B",
-    "homebridge"
+  
+    
+  "homebridge-plugin",
+  
+    
+  "bluetooth",
+  
+    
+  "temperature",
+  
+    
+  "sensor",
+  
+    
+  "Inkbird",
+  
+    
+  "IBS-M1 WIFI Gateway",
+  
+    
+  "IBS-PO1/B",
+  
+    
+  "homebridge"
+  
   ],
+  
   "bugs": {
-    "url": "https://github.com/richierockskool/homebridge-inkbird-wifi-gateway/issues"
+  
+    
+  "url": "https://github.com/richierockskool/homebridge-inkbird-wifi-gateway/issues"
+  
   },
+  
   "engines": {
-    "node": ">=14.18.1",
-    "homebridge": ">=1.3.5"
+  
+    
+  "node": ">=14.18.1",
+  
+    
+  "homebridge": ">=1.3.5"
+  
   },
+  
   "main": "dist/index.js",
+  
   "scripts": {
-    "lint": "eslint src/**.ts --max-warnings=0",
-    "watch": "npm run build && npm link && nodemon",
-    "build": "rimraf ./dist && tsc",
-    "prepublishOnly": "npm run lint && npm run build"
+  
+    
+  "lint": "eslint src/**.ts --max-warnings=0",
+  
+    
+  "watch": "npm run build && npm link && nodemon",
+  
+    
+  "build": "rimraf ./dist && tsc",
+  
+    
+  "prepublishOnly": "npm run lint && npm run build"
+  
   },
   
   "devDependencies": {
-    "@types/node": "^16.10.9",
-    "@typescript-eslint/eslint-plugin": "^5.0.0",
-    "@typescript-eslint/parser": "^5.0.0",
-    "eslint": "^8.0.1",
-    "homebridge": "^1.3.9",
-    "nodemon": "^1.3.3",
-    "rimraf": "^3.0.2",
-    "ts-node": "^10.3.0",
-    "typescript": "^4.4.4"
+  
+    
+  "@types/node": "^16.10.9",
+  
+    
+  "@typescript-eslint/eslint-plugin": "^5.0.0",
+  
+    
+  "@typescript-eslint/parser": "^5.0.0",
+  
+    
+  "eslint": "^8.0.1",
+  
+    
+  "homebridge": "^1.3.9",
+  
+    
+  "nodemon": "^1.3.3",
+  
+    
+  "rimraf": "^3.0.2",
+  
+    
+  "ts-node": "^10.3.0",
+  
+    
+  "typescript": "^4.4.4"
+  
   }
 }
