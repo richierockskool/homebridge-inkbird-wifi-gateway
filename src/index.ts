@@ -1,11 +1,11 @@
 import { API } from 'homebridge';
 
 import { PLATFORM_NAME } from './settings';
-import { HomebridgeInkbirdWifiGatewayPlatform } from './platform';
+import { HomebridgeInkbirdWifiGateway } from './platform';
 
 /**
  * This method registers the platform with Homebridge
  */
 export = (api: API) => {
-  api.registerPlatform('homebridge-inkbird-wifi-gateway-platform', PLATFORM_NAME, HomebridgeInkbirdWifiGatewayPlatform);
+  api.registerPlatform('homebridge-inkbird-wifi-gateway', PLATFORM_NAME, HomebridgeInkbirdWifiGateway);
 };

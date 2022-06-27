@@ -12,22 +12,22 @@ import { HomebridgeTemperatureSensorAccessory } from './platformAccessory';
  * parse the user config and discover/register accessories with Homebridge.
  */
 module.exports = (api) => {
-  api.registerPlatform('Homebridge Inkbird Wifi Gateway Platform', HomebridgeInkbirdWifiGatewayPlatform);
+  api.registerPlatform('Homebridge Inkbird Wifi Gateway Platform', HomebridgeInkbirdWifiGateway);
 };
-export class HomebridgeInkbirdWifiGatewayPlatform implements DynamicPlatformPlugin {
+export class HomebridgeInkbirdWifiGateway implements DynamicPlatformPlugin {
   public readonly Service: typeof Service = this.api.hap.Service;
   public readonly Characteristic: typeof Characteristic = this.api.hap.Characteristic;
 
   // this is used to track restored cached accessories
   public readonly accessories: PlatformAccessory[] = [];
-  Accessory!: PlatformAccessory<HomebridgeInkbirdWifiGatewayPlatform>;
+  Accessory!: PlatformAccessory<HomebridgeInkbirdWifiGateway>;
 
   constructor(
     public readonly log: Logger,
     public readonly config: PlatformConfig,
     public readonly api: API,
   ) {
-    this.log.debug('Finished initializing Homebridge Inkbird Wifi Gateway Platform:', this.config.name);
+    this.log.debug('Finished initializing Homebridge Inkbird Wifi Gateway:', this.config.name);
 
     // When this event is fired it means Homebridge has restored all cached accessories from disk.
     // Dynamic Platform plugins should only register new accessories after this event was fired,

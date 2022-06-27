@@ -1,7 +1,7 @@
 
 import { Service, PlatformAccessory, CharacteristicValue } from 'homebridge';
 
-import { HomebridgeInkbirdWifiGatewayPlatform } from './platform';
+import { HomebridgeInkbirdWifiGateway } from './platform';
 
 /**
  * Platform Accessory
@@ -23,7 +23,7 @@ export class HomebridgeTemperatureSensorAccessory {
   static existingAccessory: string;
 
   constructor(
-    private readonly platform: HomebridgeInkbirdWifiGatewayPlatform,
+    private readonly platform: HomebridgeInkbirdWifiGateway,
     private readonly accessory: PlatformAccessory,
   ) {
 
