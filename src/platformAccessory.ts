@@ -103,7 +103,7 @@ export class HomebridgeTemperatureSensorAccessory {
     // implement your own code to turn your device on/off
     this.exampleStates.On = value as boolean;
 
-    this.platform.log.debug('Set Characteristic On ->', value);
+    this.platform.log.debug('Triggered GET CurrentTemperature', value);
   }
 
   /**
