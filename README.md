@@ -13,7 +13,7 @@ A homebridge-plugin for the Inkbird bluetooth pool temperature sensors.
 ```
 "platforms": [
    {
-      "paltform"       : "HomebridgeInkbirdWifiGateway",
+      "platform"       : "HomebridgeInkbirdWifiGateway",
       "plugin_map"      :
       {
          "plugin_name": "homebridge-inkbird-wifi-gateway",
