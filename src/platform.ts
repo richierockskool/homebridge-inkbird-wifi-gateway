@@ -11,7 +11,7 @@ import { HomebridgeTemperatureSensorAccessory } from './platformAccessory';
  * This class is the main constructor for your plugin, this is where you should
  * parse the user config and discover/register accessories with Homebridge.
  */
-module.exports = (api) => {
+module.exports = (api: { registerPlatform: (arg0: string, arg1: typeof HomebridgeInkbirdWifiGateway) => void }) => {
   api.registerPlatform('Homebridge Inkbird Wifi Gateway Platform', HomebridgeInkbirdWifiGateway);
 };
 export class HomebridgeInkbirdWifiGateway implements DynamicPlatformPlugin {
