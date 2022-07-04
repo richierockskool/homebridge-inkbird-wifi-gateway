@@ -5,7 +5,8 @@
   },
   "editor.rulers": [ 140 ],
   "eslint.enable": true,
-  "eslint.nodePath": null,
+  "eslint.nodePath": "C:\\{path}",
+  "eslint.workingDirectories": ["./backend", "./frontend"],
   "eslint.alwaysShowStatus": true,
   "eslint.codeAction.disableRuleComment": {}
 }
