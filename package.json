@@ -6,13 +6,14 @@
   
   "author": "R.Jagger",
   
-  "version": "1.0.1",
+  "version": "1.0.2",
   
   "description": "Control Inkbird BT devices through the WiFi Gateway App",
   
   "license": "Apache-2.0",
   
   "repository": {
+  
     
   "url": "https://github.com/richierockskool/homebridge-inkbird-wifi-gateway.git"
   
@@ -34,7 +35,8 @@
   
     
   "inkbird",
-      
+  
+    
   "homebridge"
   
   ],
