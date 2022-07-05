@@ -21,6 +21,8 @@ export class HomebridgeTemperatureSensorAccessory {
   };
 
   static existingAccessory: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  getCurrentTemperature: any;
 
   constructor(
     private readonly platform: HomebridgeInkbirdWifiGateway,
@@ -46,9 +48,9 @@ export class HomebridgeTemperatureSensorAccessory {
     // see https://developers.homebridge.io/#/service/Lightbulb
 
     // register handlers for the On/Off Characteristic
-    this.service.getCharacteristic(this.platform.Characteristic.On)
-      .onSet(this.setOn.bind(this))                // SET - bind to the `setOn` method below
-      .onGet(this.getOn.bind(this));               // GET - bind to the `getOn` method below
+    this.service.getCharacteristic(this.platform.Characteristic.CurrentTemperature)
+      .onSet(this.setCurrentTemperature.bind(this))                // SET - bind to the `setOn` method below
+      .onGet(this.getCurrentTemperature.bind(this));               // GET - bind to the `getOn` method below
 
     // register handlers for the Brightness Characteristic
     this.service.getCharacteristic(this.platform.Characteristic.TemperatureDisplayUnits)
@@ -66,11 +68,11 @@ export class HomebridgeTemperatureSensorAccessory {
      */
 
     // Example: add two "motion sensor" services to the accessory
-    const temperatureSensorOneService = this.accessory.getService('Pool Sensor One Name') ||
-      this.accessory.addService(this.platform.Service.TemperatureSensor, 'Motion Sensor One Name', 'YourUniqueIdentifier-1');
+    const temperatureSensorOneService = this.accessory.getService('Temperature Sensor One Name') ||
+      this.accessory.addService(this.platform.Service.TemperatureSensor, 'Temperature Sensor One Name', 'YourUniqueIdentifier-1');
 
-    const motionSensorTwoService = this.accessory.getService('Motion Sensor Two Name') ||
-      this.accessory.addService(this.platform.Service.MotionSensor, 'Motion Sensor Two Name', 'YourUniqueIdentifier-2');
+    const temperatureSensorTwoService = this.accessory.getService('Temperature Sensor Two Name') ||
+      this.accessory.addService(this.platform.Service.TemperatureSensor, 'Temperature Sensor Two Name', 'YourUniqueIdentifier-2');
 
     /**
      * Updating characteristics values asynchronously.
@@ -88,10 +90,10 @@ export class HomebridgeTemperatureSensorAccessory {
 
       // push the new value to HomeKit
       temperatureSensorOneService.updateCharacteristic(this.platform.Characteristic.CurrentTemperature, temperatureDetected);
-      motionSensorTwoService.updateCharacteristic(this.platform.Characteristic.MotionDetected, !temperatureDetected);
+      temperatureSensorTwoService.updateCharacteristic(this.platform.Characteristic.CurrentTemperature, !temperatureDetected);
 
       this.platform.log.debug('Triggering temperatureSensorOneService:', temperatureDetected);
-      this.platform.log.debug('Triggering motionSensorTwoService:', !temperatureDetected);
+      this.platform.log.debug('Triggering temperatureSensorTwoService:', !temperatureDetected);
     }, 10000);
   }
 
