@@ -9,7 +9,8 @@
         "title": "Name",
         "type": "string",
         "required": true,
-        "default": "Homebridge Inkbird Wifi Gateway"
+        "default": "Homebridge Inkbird Wifi Gateway",
+        "description": "homebridge-inkbird-wifi-gateway"
       },
       "model": {
             "type": "string",
@@ -19,7 +20,7 @@
     },
       "mac_address": {
             "type": "string",
-            "title": "Bluetooth MAC address for sensor (xx:xx:xx:xx:xx:xx). If empty, then first sensor to be found will be used - see log for MAC found.",
+            "title": "Bluetooth MAC address for temperature sensor (xx:xx:xx:xx:xx:xx). If empty, then first sensor to be found will be used - see log for MAC found.",
             "required": false
   },
       "update_interval": {
