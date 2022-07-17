@@ -61,7 +61,7 @@
   "main": "src/index.js",
   
   "scripts": {
-  
+  "test": "./node_modules/homebridge/bin/homebridge -P ./ -I -U ./.homebridge"
     
   "lint": "eslint src/**.ts --max-warnings=0",
   
