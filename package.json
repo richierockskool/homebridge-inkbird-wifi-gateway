@@ -58,7 +58,7 @@
   
   },
   
-  "main": "src/index.js",
+  "main": "lib/functions/src/index.js",
   
   "scripts": {
   
