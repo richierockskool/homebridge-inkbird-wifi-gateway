@@ -12,7 +12,7 @@
   
   "license": "Apache-2.0",
   
-
+  "type":"module",
   
   "repository": {
   
@@ -21,27 +21,7 @@
   
   },
   
-  "keywords": [
   
-    
-  "homebridge-plugin",
-  
-    
-  "bluetooth",
-  
-    
-  "temperature",
-  
-    
-  "sensor",
-  
-    
-  "inkbird",
-  
-    
-  "homebridge"
-  
-  ],
   
   "bugs": {
   
@@ -59,9 +39,9 @@
   "homebridge": ">=1.5"
   
   },
-  
+
   "main": "dist/index.js",
-  
+
   "scripts": {
   
     
@@ -77,6 +57,27 @@
   "prepublishOnly": "npm run lint && npm run build"
   
   },
+  "keywords": [
+  
+    
+    "homebridge-plugin",
+    
+      
+    "bluetooth",
+    
+      
+    "temperature",
+    
+      
+    "sensor",
+    
+      
+    "inkbird",
+    
+      
+    "homebridge"
+    
+    ],
   
   "devDependencies": {
   
