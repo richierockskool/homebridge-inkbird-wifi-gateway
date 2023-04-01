@@ -2,7 +2,7 @@
   
   "displayName": "Homebridge Inkbird Wifi Gateway",
   
-  "name": "homebridge-inkbird-wifi-gateway",
+  "name": "@richierockskool/homebridge-inkbird-wifi-gateway",
   
   "author": "R.Jagger",
   
@@ -15,7 +15,7 @@
   "type":"module",
   
   "repository": {
-  
+    
     
   "url": "https://github.com/richierockskool/homebridge-inkbird-wifi-gateway.git"
   
