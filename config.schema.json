@@ -6,7 +6,7 @@
     "type": "object",
     "properties": {
       "name": {
-        "title": "Name",
+        "title": "Name of the sensor",
         "type": "string",
         "required": true,
         "default": "Homebridge Inkbird Wifi Gateway",
@@ -27,7 +27,7 @@
             "type": "number",
             "title": "Update interval in seconds",
             "required": false,
-            "minimum" : 600
+            "minimum" : 15
 },
       "storage": {
             "type": "string",
