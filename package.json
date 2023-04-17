@@ -40,7 +40,7 @@
   
   },
 
-  "main": "dist/dynamic-platform.js",
+  "main": "src/index.js",
 
   "scripts": {
   
