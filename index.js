@@ -12,7 +12,7 @@
 // The Inkbird bluetooth thermo-/hygrometer IBS-TH1 is a bluetooth low energy "peripheral" device. It's using the following protocol:
 // - The sensor is sending cyclic advertising frames on channels 37,38,39
 // - If the master wants to read out the actual temperature / humidity value it can simply send a scan request
-// - The sensor answers with a scan response: 
+// - The sensor answers with a scan response:
 //    - Device name:
 //       o 0x04   (length in bytes)
 //       o 0x09   (type of data is device name)
@@ -23,11 +23,12 @@
 //       o 0xtttt (temperature in 0,01°C)
 //       o 0xhhhh (humidity in 0,01%)
 //       o 0xss   (sensor: 0x00 internal sensor, 0x01 external sensor)
+// eslint-disable-next-line max-len
 //       o 0xcccc (CRC16_MODBUS: polynomial 0x18005, initial value 0xFFFF, input and result reflected, no final xor, data: 0xtt 0xtt 0xhh 0xhh 0xss)
 //       o 0xbb   (battery value in %)
 //       o 0x08   (no idea what that means - never changes)
 // - for configuration or read out of history data a BTLE connection is established
-//    - the sensor reports the services / characteristics: 
+//    - the sensor reports the services / characteristics:
 //       o 0x1800: Generic access (sps)
 //       o 0x1801: Generic attibute
 //       o 0x180A: Device information
@@ -46,6 +47,7 @@
 //             o 0xtttt (temperature in 0,01°C)
 //             o 0xhhhh (humidity in 0,01%)
 //             o 0xss   (sensor: 0x00 internal sensor, 0x01 external sensor)
+// eslint-disable-next-line max-len
 //             o 0xcccc (CRC-16: polynomial 0x18005, initial value 0xFFFF, input and result reflected, no final xor, data: 0xtt 0xtt 0xhh 0xhh 0xss)
 //          o 0xFFF3: cfg data 2, read-write
 //          o 0xFFF4: measure, read-only
@@ -61,28 +63,19 @@
 //    - read out config and real time data (especially read minimum 9 times 0xFFF2)
 //    - read device name
 // variables have to be declared explicitly
-'use strict'
+'use strict';
 
-/** @type {Object}     Pointer to Homebridge.hap.Service */
-var cService;
-/** @type {Object}     Pointer to Homebridge.hap.Characteristic */
-var cCharacteristic;                                                                               
-/** @type {Object}     Pointer to Homebridge.hap.uuid */
-var cUUIDGen;                                                                                      
-/** @type {String}     FW-Version of the plugin (shown in Homekit) */
-var strFWVersion;                                                                                  
 //-----------------------------------------------------------------------
 // Imports
 //-----------------------------------------------------------------------
 // from JavaScript
 
 // from InkbirdWifiGateway
-const cInkbirdWifiGateway   = require('./InkbirdWifiGateway')
-const packageJson                   = require('./package.json')
-var   cFakeGatoHistoryService;
+import cInkbirdWifiGateway from './InkbirdWifiGateway';
+import { version, name } from './package.json';
 
 //-----------------------------------------------------------------------
-// Classes 
+// Classes
 //-----------------------------------------------------------------------
 
 //-----------------------------------------------------------------------
@@ -101,25 +94,30 @@ var   cFakeGatoHistoryService;
 // Global variables
 //-----------------------------------------------------------------------
  * Anonymous function called by homebridge
- * 
+ *
  * @param {Object} cHomebridge            Pointer to homebridge object
  * @returns {void}                        nothing
  */
-module.exports = function (cHomebridge)
-{
-   // get version from package
-   global.strFWVersion              = packageJson.version;
-   // require here because of need to call with cHomebridge argument
-   global.cFakeGatoHistoryService   = require('fakegato-history')(cHomebridge);
+export default function (cHomebridge) {
+  // get version from package
+  // eslint-disable-next-line no-undef
+  global.strFWVersion = version;
+  // require here because of need to call with cHomebridge argument
+  // eslint-disable-next-line no-undef, @typescript-eslint/no-var-requires
+  global.cFakeGatoHistoryService = require('fakegato-history')(cHomebridge);
 
-   console.log("Homebridge API version: " + cHomebridge.version + " InkbirdWifiGateway V" + global.strFWVersion);
+  // eslint-disable-next-line no-console, no-undef
+  console.log('Homebridge API version: ' + cHomebridge.version + ' InkbirdWifiGateway V' + global.strFWVersion);
 
-   // Service and Characteristic are from hap-nodejs
-   global.cService         = cHomebridge.hap.Service;
-   global.cCharacteristic  = cHomebridge.hap.Characteristic;
-   global.cUUIDGen         = cHomebridge.hap.uuid;
- 
-   // For platform plugin to be considered as dynamic platform plugin,
-   // registerPlatform(pluginName, platformName, constructor, dynamic), dynamic must be true
-   cHomebridge.registerAccessory(packageJson.name, "InkbirdWifiGateway", cInkbirdWifiGateway);
+  // Service and Characteristic are from hap-nodejs
+  // eslint-disable-next-line no-undef
+  global.cService = cHomebridge.hap.Service;
+  // eslint-disable-next-line no-undef
+  global.cCharacteristic = cHomebridge.hap.Characteristic;
+  // eslint-disable-next-line no-undef
+  global.cUUIDGen = cHomebridge.hap.uuid;
+
+  // For platform plugin to be considered as dynamic platform plugin,
+  // registerPlatform(pluginName, platformName, constructor, dynamic), dynamic must be true
+  cHomebridge.registerAccessory(name, 'InkbirdWifiGateway', cInkbirdWifiGateway);
 }
