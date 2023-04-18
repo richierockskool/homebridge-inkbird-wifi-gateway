@@ -22,7 +22,7 @@ A homebridge-plugin for the Inkbird bluetooth pool temperature sensors using the
       "name"            : "Homebridge Inkbird Wifi Gateway",
       "model"           : "IBS-M1S",
       "mac_address"     : "e8:db:84:b6:9c:e6",
-      "update_interval" : 600,
+      "update_interval" : **15**,
       "storage"         : "filesystem",
       "loglevel"        : 3
    }
