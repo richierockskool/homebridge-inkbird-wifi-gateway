@@ -6,22 +6,20 @@
   
   "author": "R.Jagger",
   
-  "version": "1.0.2",
+  "version": "1.0.3",
   
   "description": "Control Inkbird BT devices through the WiFi Gateway App",
   
   "license": "Apache-2.0",
   
-  "type":"module",
+  "type": "module",
   
   "repository": {
-    
+  
     
   "url": "https://github.com/richierockskool/homebridge-inkbird-wifi-gateway.git"
   
   },
-  
-  
   
   "bugs": {
   
@@ -39,9 +37,9 @@
   "homebridge": ">=1.5"
   
   },
-
+  
   "main": "src/index.js",
-
+  
   "scripts": {
   
     
@@ -57,27 +55,28 @@
   "prepublishOnly": "npm run lint && npm run build"
   
   },
+  
   "keywords": [
   
     
-    "homebridge-plugin",
+  "homebridge-plugin",
+  
     
-      
-    "bluetooth",
+  "bluetooth",
+  
     
-      
-    "temperature",
+  "temperature",
+  
     
-      
-    "sensor",
+  "sensor",
+  
     
-      
-    "inkbird",
+  "inkbird",
+  
     
-      
-    "homebridge"
-    
-    ],
+  "homebridge"
+  
+  ],
   
   "devDependencies": {
   
@@ -116,7 +115,10 @@
   "homebridge-inkbird-wifi-gateway": "github:richierockskool/homebridge-inkbird-wifi-gateway",
   
     
-  "latest-version": "^7.0.0"
+  "latest-version": "^7.0.0",
+  
+    
+  "my-package": "^0.0.0"
   
   }
 }
