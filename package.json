@@ -17,14 +17,14 @@
   "repository": {
   
     
-  "url": "https://github.com/richjagger/homebridge-inkbird-wifi-gateway.git"
+  "url": "https://github.com/richierockskool/homebridge-inkbird-wifi-gateway.git"
   
   },
   
   "bugs": {
   
     
-  "url": "https://github.com/richjagger/homebridge-inkbird-wifi-gateway/issues"
+  "url": "https://github.com/richierockskool/homebridge-inkbird-wifi-gateway/issues"
   
   },
   
@@ -112,7 +112,7 @@
   "dependencies": {
   
     
-  "homebridge-inkbird-wifi-gateway": "github:richjagger/homebridge-inkbird-wifi-gateway",
+  "homebridge-inkbird-wifi-gateway": "github:richierockskool/homebridge-inkbird-wifi-gateway",
   
     
   "latest-version": "^7.0.0",
