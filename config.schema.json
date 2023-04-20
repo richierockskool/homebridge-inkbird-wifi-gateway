@@ -15,12 +15,12 @@
       "model": {
             "type": "string",
             "enum": [ "IBS-M1", "not in list - try it anyway" ],
-            "title": "Model number (i.e. IBS-M1, leave empty if not sure)",
+            "title": "Model number (i.e. IBS-M1S, leave empty if not sure)",
             "required": true
     },
       "mac_address": {
             "type": "string",
-            "title": "Bluetooth MAC address for temperature sensor (xx:xx:xx:xx:xx:xx). If empty, then first sensor to be found will be used - see log for MAC found.",
+            "title": "Bluetooth MAC address for temperature sensor - WiFi gateway (xx:xx:xx:xx:xx:xx). If empty, then first sensor to be found will be used - see log for MAC found.",
             "required": false
   },
       "update_interval": {
