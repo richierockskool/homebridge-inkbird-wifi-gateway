@@ -27,6 +27,16 @@
   "url": "https://github.com/richierockskool/homebridge-inkbird-wifi-gateway/issues"
   
   },
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/richierockskool"
+    },
+    {
+      "type": "paypal",
+      "url": "https://www.paypal.com/paypalme/RichJagger"
+    }
+  ],
   
   "engines": {
   
