@@ -71,7 +71,7 @@
 // from JavaScript
 
 // from InkbirdWifiGateway
-import cInkbirdWifiGateway from './HombridgeInkbirdWifiGateway';
+import cInkbirdWifiGateway from './homebridge-inkbird-wifi-gateway';
 import { version, name } from './package.json';
 
 //-----------------------------------------------------------------------
@@ -119,5 +119,5 @@ export default function (cHomebridge) {
 
   // For platform plugin to be considered as dynamic platform plugin,
   // registerPlatform(pluginName, platformName, constructor, dynamic), dynamic must be true
-  cHomebridge.registerAccessory(name, 'HomebridgeInkbirdWifiGateway', cInkbirdWifiGateway);
+  cHomebridge.registerAccessory(name, 'homebridge-inkbird-wifi-gateway', cInkbirdWifiGateway);
 }
