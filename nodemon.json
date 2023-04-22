@@ -2,7 +2,7 @@
   "watch": [
     "src"
   ],
-  "ext": "ts",
+  "ext": "js",
   "ignore": [],
   "exec": "tsc && homebridge -I -D",
   "signal": "SIGTERM",
