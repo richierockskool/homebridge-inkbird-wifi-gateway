@@ -10,7 +10,8 @@
         "type": "string",
         "required": true,
         "default": "Homebridge Inkbird Wifi Gateway",
-        "description": "homebridge-inkbird-wifi-gateway"
+        "description":"HomebridgeInkbirdWifiGateway"
+        
       },
       "model": {
             "type": "string",
