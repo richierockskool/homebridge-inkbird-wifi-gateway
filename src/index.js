@@ -65,13 +65,14 @@
 // variables have to be declared explicitly
 'use strict';
 
+
 //-----------------------------------------------------------------------
 // Imports
 //-----------------------------------------------------------------------
 // from JavaScript
 
 // from InkbirdWifiGateway
-import cInkbirdWifiGateway from './homebridge-inkbird-wifi-gateway';
+import cInkbirdWifiGateway from './InkbirdBtTHSensorAccessory';
 import { version, name } from './package.json';
 
 //-----------------------------------------------------------------------
