@@ -72,7 +72,7 @@
 
 // from InkbirdWifiGateway
 import cInkbirdWifiGateway from './homebridge-inkbird-wifi-gateway';
-import { version, name } from './package.json';
+import { version, name } from '../package.json';
 
 //-----------------------------------------------------------------------
 // Classes

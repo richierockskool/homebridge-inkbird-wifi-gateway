@@ -19,7 +19,7 @@
   },
   "include": [
     "src/"
-, "index.js"  ],
+, "src/index.js"  ],
   "exclude": [
     "**/*.spec.ts"
   ]
