@@ -2,11 +2,8 @@
   "watch": [
     "src"
   ],
-  "ext": "js",
+  "ext": "ts",
   "ignore": [],
-  "exec": "tsc && homebridge -I -D",
-  "signal": "SIGTERM",
-  "env": {
-    "NODE_OPTIONS": "--trace-warnings"
+  "exec": "tsc && homebridge -I -D"
+  
   }
-}
