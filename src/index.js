@@ -66,13 +66,14 @@
 'use strict';
 
 
+
 //-----------------------------------------------------------------------
 // Imports
 //-----------------------------------------------------------------------
 // from JavaScript
 
 // from InkbirdWifiGateway
-import cInkbirdWifiGateway from './InkbirdBtTHSensorAccessory';
+import cInkbirdWifiGateway from './InkbirdWifiGateway';
 import { version, name } from './package.json';
 
 //-----------------------------------------------------------------------
