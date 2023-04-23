@@ -1,4 +1,6 @@
-{ "displayName": "Homebridge Inkbird Wifi Gateway",
+{ 
+    
+  "displayName": "Homebridge Inkbird Wifi Gateway",
   
   "name": "homebridge-inkbird-wifi-gateway",
   
