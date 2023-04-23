@@ -65,13 +65,7 @@
 // variables have to be declared explicitly
 'use strict';
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires, no-undef
-const packageJson = require('./package.json');
 
-// eslint-disable-next-line no-console, no-undef
-console.log(packageJson);
-// eslint-disable-next-line no-console, no-undef
-console.log(packageJson.homebridge-inkbird-wifi-gateway);
 
 //-----------------------------------------------------------------------
 // Imports
