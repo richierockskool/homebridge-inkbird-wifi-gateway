@@ -1,4 +1,5 @@
-{"displayName":"Homebridge Inkbird Wifi Gateway",
+{
+"displayName":"Homebridge Inkbird Wifi Gateway",
 "name":"homebridge-inkbird-wifi-gateway",
 "author":"R.Jagger",
 "version":"1.0.6",
