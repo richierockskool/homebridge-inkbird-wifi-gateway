@@ -8,8 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-        
-            "skipFiles": [
+         "skipFiles": [
                 "<node_internals>/**"
             ],
             "program": "${file}"
