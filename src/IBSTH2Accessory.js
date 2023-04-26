@@ -1,4 +1,4 @@
-class IBSTH2Accessory {
+class IBSM1SAccessory {
 
   constructor(log, scanner, device, homebridge) {
 
@@ -19,7 +19,7 @@ class IBSTH2Accessory {
     this.informationService = new Service.AccessoryInformation();
     this.informationService
       .setCharacteristic(this.Characteristic.Manufacturer, 'Inkbird')
-      .setCharacteristic(this.Characteristic.Model, 'IBS TH2')
+      .setCharacteristic(this.Characteristic.Model, 'IBS M1S')
       .setCharacteristic(this.Characteristic.SerialNumber, device.deviceId);
 
     // Battery Service
@@ -76,4 +76,4 @@ class IBSTH2Accessory {
 
 }
 
-export default IBSTH2Accessory;
+export default IBSM1SAccessory;

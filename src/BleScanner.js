@@ -1,5 +1,5 @@
 import Emitter from 'events';
-import { once, startScanning, on, stopScanning } from '@abandonware/noble';
+import * as noble from '@abandonware/noble';
 
 class BleScanner extends Emitter {
 
@@ -7,22 +7,22 @@ class BleScanner extends Emitter {
     super();
     this.log = log;
     this.devices = new Set();
-    once('scanStart', () => {
+    noble.once('scanStart', () => {
       log('Started BLE scanning.');
     });
-    once('scanStop', () => {
+    noble.once('scanStop', () => {
       //Notify?
       log('Stopped BLE scanning.');
     });
-    once('stateChange', (state) => {
+    noble.once('stateChange', (state) => {
       log('BLE State %s', state);
       if (state === 'poweredOn') {
-        startScanning([], true);
+        noble.startScanning([], true);
       }
     });
 
     // eslint-disable-next-line no-undef
-    on('discover', (peripheral) => {
+    noble.on('discover', (peripheral) => {
       if (this.devices.has(peripheral.address)) {
         let buffer= peripheral.advertisement.manufacturerData;
         const expectedCrc16 = buffer[6] * 256 + buffer[5];
@@ -46,7 +46,7 @@ class BleScanner extends Emitter {
   }
 
   destroy() {
-    stopScanning();
+    noble.stopScanning();
   }
 
   addDevice(bleMac) {
