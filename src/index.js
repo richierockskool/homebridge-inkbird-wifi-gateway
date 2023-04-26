@@ -73,7 +73,7 @@
 // from JavaScript
 
 // from InkbirdWifiGateway
-import cInkbirdWifiGateway from './InkbirdWifiGateway';
+import cInkbirdWifiGateway from './InkbirdWifiGateway.js';
 import { version, name } from './package.json';
 
 //-----------------------------------------------------------------------
