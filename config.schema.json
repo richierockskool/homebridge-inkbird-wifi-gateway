@@ -3,7 +3,7 @@
   "pluginType": "platform",
   "singular": true,
    "schema": {
-    "type": "accessory",
+    "type": "object",
     "properties": {
       "name": {
         "title": "Name of the sensor",
@@ -13,7 +13,7 @@
         "description":"HomebridgeInkbirdWifiGateway"
         
       },
-      "devices": [
+      "devices": 
         {
           "name": "Wifi Gateway",
           "type": "IBSM1S",
