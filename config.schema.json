@@ -13,6 +13,12 @@
         "description":"HomebridgeInkbirdWifiGateway"
         
       },
+      "devices": [
+        {
+          "name": "Wifi Gateway",
+          "type": "IBSM1S",
+          "deviceId": "<<Ble MAC Address>>"
+        },
       "model": {
             "type": "string",
             "enum": [ "IBS-M1", "not in list - try it anyway" ],
