@@ -1,5 +1,5 @@
 {
-  "pluginAlias": "HomebridgeInkbirdWifiGateway",
+  "pluginAlias": "homebridge-inkbird-wifi-gateway",
   "pluginType": "platform",
   "singular": true,
    "schema": {
@@ -9,8 +9,8 @@
         "title": "Name of the sensor",
         "type": "string",
         "required": true,
-        "default": "Homebridge Inkbird Wifi Gateway",
-        "description":"HomebridgeInkbirdWifiGateway"
+        "default": false,
+        
         
       },
       "devices": 
