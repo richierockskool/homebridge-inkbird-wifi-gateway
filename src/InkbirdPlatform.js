@@ -1,7 +1,7 @@
 import BleScanner from './BleScanner.js';
 import IBSM1SAccessory from './IBSM1SAccessory.js';
 
-class InkbirdPlatform {
+class HomebridgeInkbirdWifiGateway {
 
   constructor(log, config) {
     this.log = log;
@@ -26,4 +26,4 @@ class InkbirdPlatform {
   }
 }
 
-export default InkbirdPlatform;
+export default HomebridgeInkbirdWifiGateway;
