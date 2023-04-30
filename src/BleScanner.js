@@ -7,14 +7,14 @@ class BleScanner extends Emitter {
     super();
     this.log = log;
     this.devices = new Set();
-    noble.on('scanStart', () => {
+    this.once('scanStart', () => {
       log('Started BLE scanning.');
     });
-    noble.on('scanStop', () => {
+    this.once('scanStop', () => {
       //Notify?
       log('Stopped BLE scanning.');
     });
-    noble.on('stateChange', (state) => {
+    this.once('stateChange', (state) => {
       log('BLE State %s', state);
       if (state === 'poweredOn') {
         noble.startScanning([], true);
@@ -22,7 +22,7 @@ class BleScanner extends Emitter {
     });
 
     // eslint-disable-next-line no-undef
-    noble.on('discover', (peripheral) => {
+    this.on('discover', (peripheral) => {
       if (this.devices.has(peripheral.address)) {
         let buffer= peripheral.advertisement.manufacturerData;
         const expectedCrc16 = buffer[6] * 256 + buffer[5];
