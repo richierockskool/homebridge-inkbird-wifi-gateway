@@ -7,14 +7,14 @@ class BleScanner extends Emitter {
     super();
     this.log = log;
     this.devices = new Set();
-    noble.once('scanStart', () => {
+    noble.on('scanStart', () => {
       log('Started BLE scanning.');
     });
-    noble.once('scanStop', () => {
+    noble.on('scanStop', () => {
       //Notify?
       log('Stopped BLE scanning.');
     });
-    noble.once('stateChange', (state) => {
+    noble.on('stateChange', (state) => {
       log('BLE State %s', state);
       if (state === 'poweredOn') {
         noble.startScanning([], true);
