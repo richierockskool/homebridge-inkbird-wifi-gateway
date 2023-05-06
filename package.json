@@ -1,7 +1,7 @@
 {"displayName":"Homebridge Inkbird Wifi Gateway",
 "name":"homebridge-inkbird-wifi-gateway",
 "author":"R.Jagger",
-"version":"1.0.6",
+"version":"1.0.7",
 "description":"Control Inkbird BT devices through the WiFi Gateway App",
 "license":"Apache-2.0",
 "type":"module",
