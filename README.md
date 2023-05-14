@@ -11,22 +11,22 @@ A homebridge-plugin for the Inkbird bluetooth pool temperature sensors using the
    
    ### 2. Update homebridge configuration file.
 ```
-"platforms": [
-   {
+    {
       "platform"       : "HomebridgeInkbirdWifiGateway",
-      "plugin_map"      :
+     
       {
-         "plugin_name": "homebridge-inkbird-wifi-gateway",
-         "index": 0
-      },
-      "name"            : "Homebridge Inkbird Wifi Gateway",
-      "model"           : "IBS-M1S",
-      "mac_address"     : "e8:db:84:b6:9c:e6",
-      "update_interval" : **15**,
-      "storage"         : "filesystem",
-      "loglevel"        : 3
+         "devices": [
+                {
+                    "name": "Inkbird Wifi Gateway",
+                    "type": "IBSM1S",
+                    "deviceId": "<<Ble MAC Address>>"
+                }
+            ],
+            "update_interval": 15,
+            "storage": "filesystem",
+            "loglevel": 3
    }
-]
+    }
 ```
 - name            (required): Choose a suitable name for your sensor accessory.
 - model           (required): Choose a type from list of supported types above.
@@ -36,7 +36,7 @@ A homebridge-plugin for the Inkbird bluetooth pool temperature sensors using the
                               But be warned, you might get very strange values!!!
 - mac_address     (optional): Put the MAC-address of the sensor if you know it.
                               If not, leave the value open and the plugin will choose any sensor it finds that passes the plausibility checks. In the log you will get a message like this:
-                              `6/6/2022 12:39:05 [Wifi Gateway] Peripheral with MAC e8:db:84:b6:9c:e6 found - stop scanning`
+                              `6/6/2022 12:39:05 [Inkbird Wifi Gateway]
                               There you have your MAC. Copy it to your configuration in this format ("xx:xx:xx:xx:xx:xx") to lock only to this sensor.
 - update_interval (optional): If you specify an update interval (in seconds) the plugin will automatically refresh the values so you have
                               a faster response for your value. Also you need to configure this option, if you want the Inkbird history to be

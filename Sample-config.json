@@ -7,17 +7,18 @@
         "advertiser": "bonjour-hap"
   },
   "description": "This is an example configuration file with an Inkbird platform. It refers to a single Inkbird accessory of type IBSM1S.",
-  "platforms": [
+  
     {
-      "platform": "Inkbird",
-      "name": "Inkbird Sensor Platform for Homebridge",
+      "platform": "homebridge-inkbird-wifi-gateway", 
       "devices": [
         {
-          "name": "Wifi Gateway",
+          "name": "Inkbird Wifi Gateway",
           "type": "IBSM1S",
           "deviceId": "<<Ble MAC Address>>"
         }
       ]
     }
-  ]
+    "update_interval": 15,
+    "storage": "filesystem",
+    "loglevel": 3
 }
