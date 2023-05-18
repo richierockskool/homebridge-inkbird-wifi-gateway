@@ -12,10 +12,8 @@ A homebridge-plugin for the Inkbird bluetooth pool temperature sensors using the
    ### 2. Update homebridge configuration file.
 ```
     {
-      "platform"       : "HomebridgeInkbirdWifiGateway",
-     
-      {
-         "devices": [
+            "name": "homebridge-inkbird-wifi-gateway",
+            "devices": [
                 {
                     "name": "Inkbird Wifi Gateway",
                     "type": "IBSM1S",
@@ -24,9 +22,9 @@ A homebridge-plugin for the Inkbird bluetooth pool temperature sensors using the
             ],
             "update_interval": 15,
             "storage": "filesystem",
-            "loglevel": 3
-   }
-    }
+            "loglevel": 3,
+            "platform": "homebridge-inkbird-wifi-gateway"
+        }
 ```
 - name            (required): Choose a suitable name for your sensor accessory.
 - model           (required): Choose a type from list of supported types above.
