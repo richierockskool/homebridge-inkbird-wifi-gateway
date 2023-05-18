@@ -36,7 +36,6 @@
     "dependencies":
     {"@abandonware/noble":"^1.9.2-21",
     "chokidar":"^3.5.3",
-    "homebridge-inkbird-wifi-gateway":"github:richierockskool/homebridge-inkbird-wifi-gateway",
     "latest-version":"^7.0.0",
     "module-name":"^0.0.1-security",
     "my-package":"^0.0.0",
