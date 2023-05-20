@@ -55,7 +55,6 @@
   "dependencies": {
     "@abandonware/noble": "^1.9.2-21",
     "chokidar": "^3.5.3",
-    "fsevents": "^2.3.2",
     "homebridge-inkbird-wifi-gateway": "^1.0.9",
     "latest-version": "^7.0.0",
     "module-name": "^0.0.1-security",
