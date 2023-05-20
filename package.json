@@ -62,6 +62,7 @@
     "my-package": "^0.0.0",
     "node-fetch": "^2.6.1",
     "npm": "^9.6.7",
+    "npm-run-path": "^5.1.0",
     "resolve-url": "^0.2.1",
     "source-map-resolve": "^0.6.0",
     "source-map-url": "^0.4.1",
