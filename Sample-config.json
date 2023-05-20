@@ -9,7 +9,7 @@
   "description": "This is an example configuration file with an Inkbird platform. It refers to a single Inkbird accessory of type IBSM1S.",
   
   {
-    "name": "homebridge-inkbird-wifi-gateway",
+    "name": "HomebridgeInkbirdWifiGateway",
     "devices": [
         {
             "name": "Inkbird Wifi Gateway",

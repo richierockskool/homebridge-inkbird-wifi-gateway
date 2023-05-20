@@ -14,7 +14,7 @@
         
       },
       {
-        "name": "homebridge-inkbird-wifi-gateway",
+        "name": "HomebridgeInkbirdWifiGateway",
         "devices": [
             {
                 "name": "Inkbird Wifi Gateway",
