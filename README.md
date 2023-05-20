@@ -23,7 +23,7 @@ A homebridge-plugin for the Inkbird bluetooth pool temperature sensors using the
             "update_interval": 15,
             "storage": "filesystem",
             "loglevel": 3,
-            "platform": "homebridge-inkbird-wifi-gateway"
+            "platform": "HomebridgeInkbirdWifiGateway"
         }
 ```
 - name            (required): Choose a suitable name for your sensor accessory.

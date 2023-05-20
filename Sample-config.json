@@ -20,6 +20,6 @@
     "update_interval": 15,
     "storage": "filesystem",
     "loglevel": 3,
-    "platform": "homebridge-inkbird-wifi-gateway"
+    "platform": "HomebridgeInkbirdWifiGateway"
 }
 }
