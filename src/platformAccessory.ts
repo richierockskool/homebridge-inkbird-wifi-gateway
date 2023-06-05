@@ -92,7 +92,7 @@ export class HomebridgeTemperatureSensorAccessory {
       temperatureSensorOneService.updateCharacteristic(this.platform.Characteristic.CurrentTemperature, temperatureDetected);
       temperatureSensorTwoService.updateCharacteristic(this.platform.Characteristic.CurrentTemperature, !temperatureDetected);
 
-      this.platform.log.debug('Triggering temperatureSensorOneService:', temperatureDetected);
+      this.platform.log.debug('Triggering temperatureSensorOneService:', !temperatureDetected);
       this.platform.log.debug('Triggering temperatureSensorTwoService:', !temperatureDetected);
     }, 10000);
   }

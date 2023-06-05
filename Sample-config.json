@@ -2,6 +2,8 @@
   "bridge": {
     "name": "Homebridge 88AB",
         "username": "0E:84:85:50:88:AB",
+        "manufacturer": "homebridge.io",
+        "model": "homebridge",
         "port": 51516,
         "pin": "206-99-271",
         "advertiser": "bonjour-hap"

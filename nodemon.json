@@ -3,7 +3,7 @@
     "src"
   ],
   "ext": "ts",
-  "ignore": [],
-  "exec": "tsc && homebridge -I -D"
-  
+  "ignore": ["src/**/*.spec.ts"],
+  "exec": "tsc && homebridge -I -C",
+  "signal": "SIGTERM"
   }
