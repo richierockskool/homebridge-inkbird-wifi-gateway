@@ -2,7 +2,7 @@
   "pluginAlias": "HomebridgeInkbirdWifiGateway",
   "pluginType": "platform",
     "schema": {
-    "type": "object",
+    "type": "accessory",
     "properties": {
       "name": {
         "title": "Name of the device",
