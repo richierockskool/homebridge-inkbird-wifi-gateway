@@ -34,6 +34,6 @@ jobs:
           npm run build
           npm list --outdated
           npm audit
-          npm audit --fix
+          npm audit fix
           npm list --outdated
           npm run build
