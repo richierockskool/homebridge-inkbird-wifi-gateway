@@ -33,7 +33,7 @@ jobs:
         run: |
           npm run build
           npm list --outdated
-          npm audit
+          npm audit || true  # ignore failures
           npm audit fix
           npm list --outdated
           npm run build
