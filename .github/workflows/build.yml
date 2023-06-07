@@ -7,6 +7,7 @@ jobs:
     runs-on: macos-latest  # ubuntu-latest
 
     strategy:
+      fail-fast: false
       matrix:
         # the Node.js versions to build on
         node-version: [16.x, 18.x, 20.x]
