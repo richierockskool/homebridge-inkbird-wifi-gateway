@@ -27,3 +27,13 @@ jobs:
 
       - name: Build the project
         run: npm run build
+
+      # Let's test multiple builds which might force a rename
+      - name: run build ; audit ; fix ; build
+        run: |
+          npm run build
+          npm list --outdated
+          npm audit
+          npm audit --fix
+          npm list --outdated
+          npm run build
