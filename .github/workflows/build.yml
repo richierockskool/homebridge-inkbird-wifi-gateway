@@ -38,3 +38,4 @@ jobs:
           npm audit fix || true
           npm list --outdated
           npm run build
+          ls -hal
