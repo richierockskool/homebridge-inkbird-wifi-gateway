@@ -13,6 +13,18 @@ A homebridge-plugin for the Inkbird bluetooth pool temperature sensors using the
 ```
     {
             "name": "HomebridgeInkbirdWifiGateway",
+            "host": {
+            "title": "IP Address / Hostname",
+            "type": "string",
+            "required": true,
+            "format": "hostname"
+       },
+             "mac_address": {
+             "type": "string",
+             "title": "Bluetooth MAC address for sensor (xx:xx:xx:xx:xx:xx). If empty, then first sensor to be found will be used - see log for MAC found.",
+             "required": false
+    
+     },
             "devices": [
                 {
                     "name": "Inkbird Wifi Gateway",

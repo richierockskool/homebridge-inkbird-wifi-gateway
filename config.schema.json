@@ -15,7 +15,7 @@
       },
       "model": {
         "type": "string",
-        "enum": [ "IBS-MS1", "not in list - try it anyway"],
+        "enum": ["IBS-MS1", "not in list - try it anyway"],
         "title": "Model number (i.e. IBS-MS1, leave empty if not sure)",
         "required": true
       },
