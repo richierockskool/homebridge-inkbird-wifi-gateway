@@ -39,3 +39,4 @@ jobs:
           npm list --outdated
           npm run build
           ls -hal
+          ls -hal node_modules
