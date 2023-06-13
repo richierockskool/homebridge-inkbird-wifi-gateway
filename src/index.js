@@ -1,4 +1,4 @@
-import HomebridgeInkbirdWifiGateway from './HomebridgeInkbirdWifiGateway.js';
+import HomebridgeInkbirdWifiGateway from './InkbirdPlatform.js';
 
 
 export default (homebridge) => {
