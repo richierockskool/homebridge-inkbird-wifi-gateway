@@ -38,6 +38,11 @@ jobs:
           npm audit fix || true
           npm list --outdated
           npm run build
+          echo "--- ls -hal ---"
           ls -hal
+          echo "--- ls -hal dist ---"
+          ls -hal dist
+          echo "--- ls -hal node_modules ---"
           ls -hal node_modules
-          ls -hal node_modules/homebridge-inkbird-wifi-gateway
+          echo "--- ls -hal node_modules/home* ---"
+          ls -hal node_modules/home*
