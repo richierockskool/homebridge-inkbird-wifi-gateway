@@ -40,3 +40,4 @@ jobs:
           npm run build
           ls -hal
           ls -hal node_modules
+          ls -hal node_modules/homebridge-inkbird-wifi-gateway
