@@ -54,12 +54,7 @@
   },
   "dependencies": {
     "@abandonware/noble": "^1.9.2-21",
-    "latest-version": "^7.0.0",
-    "module-name": "^0.0.1-security",
-    "my-package": "^0.0.0",
-    "node-fetch": "^2.6.1",
-    "npm": "^9.7.1",
-    "npm-run-path": "^5.1.0"
+    "node-fetch": "^2.6.1"
   },
   "homepage": "https://github.com/richierockskool/homebridge-inkbird-wifi-gateway#readme"
 }
