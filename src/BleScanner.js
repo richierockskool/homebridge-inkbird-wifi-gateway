@@ -1,5 +1,6 @@
 import Emitter from 'events';
-import * as noble from '@abandonware/noble';
+// eslint-disable-next-line @typescript-eslint/no-var-requires, no-undef
+const noble = require('@abandonware/noble');
 
 class BleScanner extends Emitter {
 
