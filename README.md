@@ -14,13 +14,7 @@ A homebridge-plugin for the Inkbird bluetooth pool temperature sensors using the
 
 
     {
-        "bridge": {
-        "name": "Homebridge 88AB",
-        "username": "0E:84:85:50:88:AB",
-        "port": 51516,
-        "pin": "206-99-271",
-        "advertiser": "bonjour-hap"
-    },
+        
             "name": "HomebridgeInkbirdWifiGateway",
             "host": {
             "title": "IP Address / Hostname",
