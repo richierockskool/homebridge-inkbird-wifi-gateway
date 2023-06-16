@@ -10,7 +10,7 @@
         "required": true,
         "default": "Homebridge Inkbird Wifi Gateway Dynamic Platform",
         "items": {
-          "title": "Mode",
+          "title": "Mode"
         
       },
       "model": {
@@ -53,7 +53,7 @@
    }
       
   }
-}
+
     
 }
 }
