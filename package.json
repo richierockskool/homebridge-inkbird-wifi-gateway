@@ -55,7 +55,6 @@
   "dependencies": {
     "@abandonware/noble": "^1.9.2-21",
     "hashmap": "^2.4.0",
-    "homebridge-inkbird-wifi-gateway": "^1.2.0",
     "node-fetch": "^3.3.1"
   },
   "homepage": "https://github.com/richierockskool/homebridge-inkbird-wifi-gateway#readme"
