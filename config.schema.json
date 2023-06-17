@@ -8,7 +8,7 @@
         "title": "Name of the device",
         "type": "string",
         "required": true,
-        "default": "homebridge-inkbird-wifi-gateway"
+        
         
       },
       "model": {
