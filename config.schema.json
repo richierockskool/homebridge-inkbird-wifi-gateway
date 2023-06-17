@@ -1,5 +1,5 @@
 {
-  "pluginAlias": "homebridge-inkbird-wifi-gateway",
+  "pluginAlias": "HomebridgeInkbirdWifiGateway",
   "pluginType": "platform",
     "schema": {
     "type": "object",
@@ -7,8 +7,8 @@
       "name": {
         "title": "Name of the device",
         "type": "string",
-        "default": false,
-        "required": true
+        "required": true,
+        "default": "Homebridge Inkbird Wifi Gateway"
         
         
       },
