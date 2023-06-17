@@ -7,7 +7,7 @@
       "name": {
         "title": "Name of the device",
         "type": "string",
-        "required": true,
+        "required": true
         
         
       },
