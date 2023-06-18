@@ -8,7 +8,7 @@
         "title": "Name of the device",
         "type": "string",
         "required": true,
-        "default": "Homebridge Inkbird Wifi Gateway"
+        "default": "Inkbird Wifi Gateway"
         
         
       },
@@ -33,9 +33,9 @@
      },
      "update_interval": {
         "type": "number",
-        "title": "Update interval in seconds",
+        "title": "Update interval in minutes",
         "required": false,
-        "minimum" : 15
+        "minimum" : 5
      },
      "storage": {
         "type": "string",
