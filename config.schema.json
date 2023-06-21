@@ -1,5 +1,5 @@
 {
-  "pluginAlias": "HomebridgeInkbirdWifiGateway",
+  "pluginAlias": "homebridge-inkbird-wifi-gateway",
   "pluginType": "platform",
     "schema": {
     "type": "object",
@@ -18,6 +18,15 @@
         "title": "Model number (i.e. IBS-MS1, leave empty if not sure)",
         "required": true
       },
+      "id": {
+        "title": "Virtual ID",
+        "type": "string",
+        "required": true,
+        "format": "idname"
+      
+
+     },
+
       "host": {
         "title": "IP Address / Hostname",
         "type": "string",
