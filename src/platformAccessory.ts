@@ -9,13 +9,15 @@ import { HomebridgeInkbirdWifiGateway } from './platform';
  * Each accessory may expose multiple services of different service types.
  */
 export class HomebridgeTemperatureSensorAccessory {
-  private service: Service;
+  protected service: Service;
+
+
 
   /**
    * These are just used to create a working example
    * You should implement your own code to track the state of your accessory
    */
-  private exampleStates = {
+  public exampleStates = {
     On: false,
     CurrentTemperature: -270,
   };
@@ -24,15 +26,17 @@ export class HomebridgeTemperatureSensorAccessory {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   getCurrentTemperature: any;
 
+
   constructor(
-    private readonly platform: HomebridgeInkbirdWifiGateway,
-    private readonly accessory: PlatformAccessory,
+    protected readonly platform: HomebridgeInkbirdWifiGateway,
+    protected readonly accessory: PlatformAccessory,
+
   ) {
 
     // set accessory information
     this.accessory.getService(this.platform.Service.TemperatureSensor)!
       .setCharacteristic(this.platform.Characteristic.Manufacturer, 'InkBird')
-      .setCharacteristic(this.platform.Characteristic.Model, 'InkBird-Model')
+      .setCharacteristic(this.platform.Characteristic.Model, this.accessory.UUID)
       .setCharacteristic(this.platform.Characteristic.SerialNumber, 'InkBird-Serial');
 
     // get the LightBulb service if it exists, otherwise create a new LightBulb service
