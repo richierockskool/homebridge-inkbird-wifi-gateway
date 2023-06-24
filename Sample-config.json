@@ -1,15 +1,15 @@
 {
 	"bridge": {
 		"name": "Homebridge 88AB",
-		"username": "0E:84:85:50:88:AB",
+		"username": "00:84:85:50:88:XX",
 		"port": 51516,
 		"pin": "206-99-271"
 	},
 	"description": "This is an example configuration file with an Inkbird platform. It refers to a single Inkbird accessory of type IBSM1S.",
 	"platforms": [
     {
-		"platform": "HomebridgeInkbirdWifiGateway",
-		"name": "homebridge-inkbird-wifi-gateway",
+		"platform": "homebridge-inkbird-wifi-gateway",
+		"name": "Inkbird Wifi Gateway",
 		"devices": [
       {
 			"name": "Inkbird Wifi Gateway",
@@ -18,17 +18,24 @@
 		}
   ],
 
-  "host": {
-    "title": "IP Address / Hostname",
-    "type": "string",
-    "required": true,
-    "format": "hostname"
-  },
+  
   "model": {
     "type": "string",
     "enum": ["IBS-MS1", "not in list - try it anyway"],
     "title": "Model number (i.e. IBS-MS1, leave empty if not sure)",
     "required": true
+  },
+  "id": {
+    "title": "Virtual ID",
+    "type": "string",
+    "required": true,
+    "format": "idname"
+  },
+  "host": {
+    "title": "IP Address / Hostname",
+    "type": "string",
+    "required": true,
+    "format": "hostname"
   },
   "mac_address": {
     "type": "string",

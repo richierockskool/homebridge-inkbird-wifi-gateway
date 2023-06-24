@@ -2,7 +2,7 @@ import { API, DynamicPlatformPlugin, Logger, PlatformAccessory, PlatformConfig, 
   from 'homebridge';
 
 import { PLATFORM_NAME, PLUGIN_NAME } from './settings';
-import { HomebridgeTemperatureSensorAccessory } from './platformAccessory';
+import { InkbirdWifiGateway } from './platformAccessory';
 
 
 
@@ -94,7 +94,7 @@ export class HomebridgeInkbirdWifiGateway implements DynamicPlatformPlugin {
 
         // create the accessory handler for the restored accessory
         // this is imported from `platformAccessory.ts`
-        new HomebridgeTemperatureSensorAccessory(this, existingAccessory);
+        new InkbirdWifiGateway(this, existingAccessory);
 
         // it is possible to remove platform accessories at any time using `api.unregisterPlatformAccessories`, eg.:
         // remove platform accessories when no longer present
@@ -102,18 +102,18 @@ export class HomebridgeInkbirdWifiGateway implements DynamicPlatformPlugin {
         // this.log.info('Removing existing accessory from cache:', existingAccessory.displayName);
       } else {
         // the accessory does not yet exist, so we need to create it
-        this.log.info('Temperature Sensor:', HomebridgeTemperatureSensorAccessory);
+        this.log.info('Temperature Sensor:', InkbirdWifiGateway);
 
         // create a new accessory
-        const accessory = new this.api.platformAccessory('Homebridge Temperature Sensor Accessory', uuid);
+        const accessory = new this.api.platformAccessory('Inkbird Temperature Sensor Accessory', uuid);
 
         // store a copy of the device object in the `accessory.context`
         // the `context` property can be used to store any data about the accessory you may need
-        accessory.context.device = HomebridgeTemperatureSensorAccessory;
+        accessory.context.device = InkbirdWifiGateway;
 
         // create the accessory handler for the newly create accessory
         // this is imported from `platformAccessory.ts`
-        new HomebridgeTemperatureSensorAccessory(this, accessory);
+        new InkbirdWifiGateway(this, accessory);
 
         // link the accessory to your platform
         this.api.registerPlatformAccessories(PLUGIN_NAME, PLATFORM_NAME, [accessory]);
