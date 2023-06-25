@@ -63,12 +63,12 @@ export class HomebridgeInkbirdWifiGateway implements DynamicPlatformPlugin {
     // or a user-defined array in the platform config.
     const devicesDiscovered = [
       {
-        exampleUniqueId: 'IBS-M1S',
-        exampleDisplayName: 'Backyard',
+        UniqueId: 'IBS-M1S',
+        DisplayName: 'Backyard',
       },
       {
-        exampleUniqueId: 'IBS-PO1/B',
-        exampleDisplayName: 'Pool',
+        UniqueId: 'IBS-PO1/B',
+        DisplayName: 'Pool',
       },
     ];
 
@@ -78,7 +78,7 @@ export class HomebridgeInkbirdWifiGateway implements DynamicPlatformPlugin {
       // generate a unique id for the accessory this should be generated from
       // something globally unique, but constant, for example, the device serial
       // number or MAC address
-      const uuid = this.api.hap.uuid.generate(deviceDiscovered.exampleUniqueId);
+      const uuid = this.api.hap.uuid.generate(deviceDiscovered.UniqueId);
 
       // see if an accessory with the same uuid has already been registered and restored from
       // the cached devices we stored in the `configureAccessory` method above
@@ -105,7 +105,7 @@ export class HomebridgeInkbirdWifiGateway implements DynamicPlatformPlugin {
         this.log.info('Temperature Sensor:', InkbirdWifiGateway);
 
         // create a new accessory
-        const accessory = new this.api.platformAccessory('Inkbird Temperature Sensor Accessory', uuid);
+        const accessory = new this.api.platformAccessory('Inkbird Temperature Sensor', uuid);
 
         // store a copy of the device object in the `accessory.context`
         // the `context` property can be used to store any data about the accessory you may need

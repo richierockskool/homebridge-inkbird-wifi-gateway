@@ -25,6 +25,18 @@ export class InkbirdWifiGateway {
   static existingAccessory: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   getCurrentTemperature: any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  Characteristic: any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  handleManufacturerGet: any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  handleModelGet: any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  handleNameGet: any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  handleSerialNumberGet: any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  handleFirmwareRevisionGet: any;
 
 
   constructor(
@@ -62,6 +74,19 @@ export class InkbirdWifiGateway {
     this.service.getCharacteristic(this.platform.Characteristic.TemperatureDisplayUnits)
       .onSet(this.setCurrentTemperature.bind(this));       // SET - bind to the 'setBrightness` method below
 
+    this.service.getCharacteristic(this.Characteristic.Manufacturer)
+      .onGet(this.handleManufacturerGet.bind(this));
+
+    this.service.getCharacteristic(this.Characteristic.Model)
+      .onGet(this.handleModelGet.bind(this));
+
+    this.service.getCharacteristic(this.Characteristic.Name)
+      .onGet(this.handleNameGet.bind(this));
+    this.service.getCharacteristic(this.Characteristic.SerialNumber)
+      .onGet(this.handleSerialNumberGet.bind(this));
+    this.service.getCharacteristic(this.Characteristic.FirmwareRevision)
+      .onGet(this.handleFirmwareRevisionGet.bind(this));
+
     /**
      * Creating multiple services of the same type.
      *
@@ -72,6 +97,8 @@ export class InkbirdWifiGateway {
      * The USER_DEFINED_SUBTYPE must be unique to the platform accessory (if you platform exposes multiple accessories, each accessory
      * can use the same sub type id.)
      */
+
+
 
     // Example: add two "motion sensor" services to the accessory
     const temperatureSensorOneService = this.accessory.getService('Temperature Sensor One Name') ||
@@ -145,6 +172,8 @@ export class InkbirdWifiGateway {
    * Handle "SET" requests from HomeKit
    * These are sent when the user changes the state of an accessory, for example, changing the Brightness
    */
+
+
   async setCurrentTemperature(value: CharacteristicValue) {
     // implement your own code to set the brightness
     this.exampleStates.CurrentTemperature = value as number;
