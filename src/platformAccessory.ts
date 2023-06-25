@@ -37,7 +37,9 @@ export class InkbirdWifiGateway {
     this.accessory.getService(this.platform.Service.TemperatureSensor)!
       .setCharacteristic(this.platform.Characteristic.Manufacturer, 'InkBird')
       .setCharacteristic(this.platform.Characteristic.Model, this.accessory.UUID)
-      .setCharacteristic(this.platform.Characteristic.SerialNumber, 'InkBird-Serial');
+      .setCharacteristic(this.platform.Characteristic.SerialNumber, 'InkBird-Serial')
+      .setCharacteristic(this.platform.Characteristic.FirmwareRevision, 'InkBird')
+      .setCharacteristic(this.platform.Characteristic.Name, 'InkBird');
 
     // get the LightBulb service if it exists, otherwise create a new LightBulb service
     // you can create multiple services for each accessory
