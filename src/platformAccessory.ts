@@ -151,17 +151,17 @@ export class InkbirdWifiGateway {
    * If your device takes time to respond you should update the status of your device
    * asynchronously instead using the `updateCharacteristic` method instead.
 
-   * @example
+
    * this.service.updateCharacteristic(this.platform.Characteristic.On, true)
    */
   async getOn(): Promise<CharacteristicValue> {
     // implement your own code to check if the device is on
     const isOn = this.exampleStates.On;
-
+    this.service.updateCharacteristic(this.platform.Characteristic.On, true);
     this.platform.log.debug('Get Characteristic On ->', isOn);
 
     // if you need to return an error to show the device as "Not Responding" in the Home app:
-    // throw new this.platform.api.hap.HapStatusError(this.platform.api.hap.HAPStatus.SERVICE_COMMUNICATION_FAILURE);
+    //throw new this.platform.api.hap.HapStatusError(this.platform.api.hap.HAPStatus.SERVICE_COMMUNICATION_FAILURE);
 
     const currentValue = -270;
 
