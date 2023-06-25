@@ -29,7 +29,7 @@ A homebridge-plugin for the Inkbird bluetooth pool temperature sensors using the
     
      },
             "devices": [
-                {
+{
                     "name": "InkbirdWifiGateway",
                     "type": "IBSM1S",
                     "deviceId": "<<Ble MAC Address>>"
