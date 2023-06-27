@@ -57,6 +57,7 @@
     "hashmap": "^2.4.0",
     "lodash": "^4.17.21",
     "lodash.debounce": "^4.0.8",
+    "node-cache": "^5.1.2",
     "node-fetch": "^3.3.1",
     "promise-queue": "^2.2.5"
   },
