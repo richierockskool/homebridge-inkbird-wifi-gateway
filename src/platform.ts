@@ -64,11 +64,15 @@ export class HomebridgeInkbirdWifiGateway implements DynamicPlatformPlugin {
     const devicesDiscovered = [
       {
         UniqueId: 'IBS-M1S',
-        DisplayName: 'Backyard',
+        DisplayName: 'Backyard Gateway',
       },
       {
         UniqueId: 'IBS-PO1/B',
-        DisplayName: 'Pool',
+        DisplayName: 'Pool Temperature Sensor',
+      },
+      {
+        UniqueId: 'IBS-TH1',
+        DisplayName: 'Hot Tub Temperature Sensor',
       },
     ];
 

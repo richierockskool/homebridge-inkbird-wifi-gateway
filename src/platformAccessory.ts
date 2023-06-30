@@ -102,10 +102,10 @@ export class InkbirdWifiGateway {
 
     // Example: add two "motion sensor" services to the accessory
     const temperatureSensorOneService = this.accessory.getService('Temperature Sensor One Name') ||
-      this.accessory.addService(this.platform.Service.TemperatureSensor, 'Temperature Sensor One Name', 'YourUniqueIdentifier-1');
+      this.accessory.addService(this.platform.Service.TemperatureSensor, 'Temperature Sensor One Name', 'IBS-PO1/B');
 
     const temperatureSensorTwoService = this.accessory.getService('Temperature Sensor Two Name') ||
-      this.accessory.addService(this.platform.Service.TemperatureSensor, 'Temperature Sensor Two Name', 'YourUniqueIdentifier-2');
+      this.accessory.addService(this.platform.Service.TemperatureSensor, 'Temperature Sensor Two Name', 'IBS-TH1');
 
     /**
      * Updating characteristics values asynchronously.
