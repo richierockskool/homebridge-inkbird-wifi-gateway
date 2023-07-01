@@ -134,3 +134,5 @@ export class HomebridgeInkbirdWifiGateway implements DynamicPlatformPlugin {
 }
 
 
+
+export { InkbirdWifiGateway };

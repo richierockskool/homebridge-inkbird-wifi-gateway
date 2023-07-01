@@ -6,6 +6,9 @@ class InkbirdPlatform {
 
   constructor(log, config) {
     this.log = log;
+    this.config=config;
+    this.email=config.email;
+    this.password=config.password;
     this.accessToken = config.accessToken;
     this.device = config.devices;
     this.myAccessories = [];
