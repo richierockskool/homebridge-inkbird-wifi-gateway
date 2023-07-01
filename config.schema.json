@@ -9,6 +9,18 @@
         "type": "string",
         "required": true,
         "default": "Inkbird Wifi Gateway"
+      },
+        "email": {
+          "title": "Email",
+          "type": "string",
+          "placeholder": "username@gmail.com",
+          "required": true
+        },
+        "password": {
+          "title": "Password",
+          "type": "string",
+          "placeholder": "password",
+          "required": true
         
         
       },
