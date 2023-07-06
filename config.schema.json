@@ -5,9 +5,11 @@
     "type": "object",
     "properties": {
       "name": {
-        "title": "Name of the device",
+        "title": "Accessory name",
+        "description": "Name for this accessory",
         "type": "string",
         "required": true,
+        "placeholder": "Inkbird Wifi Gateway",
         "default": "Inkbird Wifi Gateway"
       },
         "email": {
@@ -24,21 +26,13 @@
         
         
       },
-      "model": {
+      "accessory": {
         "type": "string",
-        "enum": ["IBS-MS1", "not in list - try it anyway"],
+        "enum": ["IBS-MS1", "IBS-PO1", "IBS-TH1"],
         "title": "Model number (i.e. IBS-MS1, leave empty if not sure)",
         "required": true
       },
-      "id": {
-        "title": "Virtual ID",
-        "type": "string",
-        "required": true,
-        "format": "idname"
-      
-
-     },
-
+    
       "host": {
         "title": "IP Address / Hostname",
         "type": "string",
@@ -52,6 +46,32 @@
         "title": "Bluetooth MAC address for sensor (xx:xx:xx:xx:xx:xx). If empty, then first sensor to be found will be used - see log for MAC found.",
         "required": true
      },
+     "showBridge": {
+      "title": "Expose WiFi Hub in HomeKit",
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "showTempSensor": {
+      "title": "Expose Temperature Sensors in HomeKit",
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "showLimitsSensor": {
+      "title": "Expose Occupancy Sensors in HomeKit for Temperature high/low limits",
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "useTemperatureDisplay": {
+      "title": "Display as Temperature Display in HomeKit",
+      "type": "boolean",
+      "required": true,
+      "default": true
+      },
+
+  
      "update_interval": {
         "type": "number",
         "title": "Update interval in minutes",
