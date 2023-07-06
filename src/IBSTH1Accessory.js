@@ -1,9 +1,10 @@
-class IBSM1SAccessory {
+class IBSTH1Accessory {
 
-  constructor(log, scanner, device, homebridge) {
+  constructor(log, scanner, device, api, homebridge) {
 
     this.log = log;
     this.name = device.name;
+    this.api=api;
     this.currentTemperature = 0;
     this.currentRelativeHumidity = 0;
     this.currentBatteryLevel = 0;
@@ -13,13 +14,14 @@ class IBSM1SAccessory {
 
     // Services
     const Service = homebridge.hap.Service;
+    new api.hap.Service.TemperatureSensor;
 
     // Information Service
     this.Characteristic = homebridge.hap.Characteristic;
     this.informationService = new Service.AccessoryInformation();
     this.informationService
       .setCharacteristic(this.Characteristic.Manufacturer, 'Inkbird')
-      .setCharacteristic(this.Characteristic.Model, 'IBS M1S')
+      .setCharacteristic(this.Characteristic.Model, 'IBS-TH1')
       .setCharacteristic(this.Characteristic.SerialNumber, device.deviceId);
 
     // Battery Service
@@ -76,4 +78,4 @@ class IBSM1SAccessory {
 
 }
 
-export default IBSM1SAccessory;
+export default IBSTH1Accessory;
