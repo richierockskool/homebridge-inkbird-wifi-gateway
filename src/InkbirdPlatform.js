@@ -6,7 +6,7 @@ import IBSPO1Accessory from './IBSPO1Accessory.js';
 
 class InkbirdPlatform {
 
-  constructor(log, config, api, sensor, bridge) {
+  constructor(log, config, api) {
     this.log = log;
     this.config=config;
     this.email=config.email;
@@ -16,8 +16,7 @@ class InkbirdPlatform {
     this.myAccessories = [];
     this.api=api;
     this.accessories=[];
-    this.sensor=new sensor(this, log);
-    this.bridge=new bridge(this, log);
+
 
 
     // Boot scanner and register devices to scanner
