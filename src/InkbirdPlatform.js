@@ -15,7 +15,7 @@ class InkbirdPlatform {
     this.device = config.devices;
     this.myAccessories = [];
     this.api=api;
-    this.accessories=[];
+
 
 
 
