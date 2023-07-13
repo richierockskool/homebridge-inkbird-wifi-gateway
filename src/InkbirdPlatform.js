@@ -3,9 +3,10 @@ import BleScanner from './BleScanner.js';
 import IBSTH1Accessory from './IBSTH1Accessory.js';
 import IBSPO1Accessory from './IBSPO1Accessory.js';
 
+
 class InkbirdPlatform {
 
-  constructor(log, config, api) {
+  constructor(log, config, api, sensor, bridge) {
     this.log = log;
     this.config=config;
     this.email=config.email;
@@ -14,6 +15,10 @@ class InkbirdPlatform {
     this.device = config.devices;
     this.myAccessories = [];
     this.api=api;
+    this.accessories=[];
+    this.sensor=new sensor(this, log);
+    this.bridge=new bridge(this, log);
+
 
     // Boot scanner and register devices to scanner
     new api.hap.Service.TemperatureSensor;
