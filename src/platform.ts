@@ -3,7 +3,7 @@ import { API, DynamicPlatformPlugin, Logger, PlatformAccessory, PlatformConfig, 
 
 import { PLATFORM_NAME, PLUGIN_NAME } from './settings';
 import { InkbirdWifiGateway } from './platformAccessory';
-
+import InkbirdPlatform from './InkbirdPlatform.js';
 
 
 /**
@@ -11,23 +11,23 @@ import { InkbirdWifiGateway } from './platformAccessory';
  * This class is the main constructor for your plugin, this is where you should
  * parse the user config and discover/register accessories with Homebridge.
  */
-module.exports = (api: { registerPlatform: (arg0: string, arg1: typeof HomebridgeInkbirdWifiGateway) => void }) => {
-  api.registerPlatform('homebridge-inkbird-wifi-gateway', HomebridgeInkbirdWifiGateway);
+module.exports = (api: { registerPlatform: (arg0: string, arg1: typeof InkbirdWifiGateway) => void }) => {
+  api.registerPlatform('homebridge-inkbird-wifi-gateway', InkbirdWifiGateway);
 };
-export class HomebridgeInkbirdWifiGateway implements DynamicPlatformPlugin {
+export class InkbirdPlatform implements DynamicPlatformPlugin {
   public readonly Service: typeof Service = this.api.hap.Service;
   public readonly Characteristic: typeof Characteristic = this.api.hap.Characteristic;
 
   // this is used to track restored cached accessories
   public readonly accessories: PlatformAccessory[] = [];
-  Accessory!: PlatformAccessory<HomebridgeInkbirdWifiGateway>;
+  Accessory!: PlatformAccessory<InkbirdWifiGateway>;
 
   constructor(
     public readonly log: Logger,
     public readonly config: PlatformConfig,
     public readonly api: API,
   ) {
-    this.log.debug('Finished initializing Homebridge Inkbird Wifi Gateway:', this.config.name);
+    this.log.debug('Finished initializing Inkbird Platform:', this.config.name);
 
     // When this event is fired it means Homebridge has restored all cached accessories from disk.
     // Dynamic Platform plugins should only register new accessories after this event was fired,
@@ -121,6 +121,7 @@ export class HomebridgeInkbirdWifiGateway implements DynamicPlatformPlugin {
 
         // link the accessory to your platform
         this.api.registerPlatformAccessories(PLUGIN_NAME, PLATFORM_NAME, [accessory]);
+        this.accessories.push(accessory);
       }
     }
     /**
@@ -128,6 +129,7 @@ export class HomebridgeInkbirdWifiGateway implements DynamicPlatformPlugin {
    * accessory restored
    */
     this.configureAccessory(this.Accessory); {
+      this.log.info('Loading accessory from Homebridge cache:', this.Accessory.displayName);
       this.accessories.push(this.Accessory);
     }
   }

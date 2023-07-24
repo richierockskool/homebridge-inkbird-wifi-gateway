@@ -1,7 +1,7 @@
 
 import { Service, PlatformAccessory, CharacteristicValue } from 'homebridge';
 
-import { HomebridgeInkbirdWifiGateway } from './platform';
+import { InkbirdPlatform } from './InkbirdPlatform.js';
 
 /**
  * Platform Accessory
@@ -40,7 +40,7 @@ export class InkbirdWifiGateway {
 
 
   constructor(
-    protected readonly platform: HomebridgeInkbirdWifiGateway,
+    protected readonly platform: InkbirdPlatform,
     protected readonly accessory: PlatformAccessory,
 
   ) {

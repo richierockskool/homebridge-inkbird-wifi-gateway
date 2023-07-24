@@ -4,7 +4,7 @@ import IBSTH1Accessory from './IBSTH1Accessory.js';
 import IBSPO1Accessory from './IBSPO1Accessory.js';
 
 
-class InkbirdPlatform {
+export class InkbirdPlatform {
 
   constructor(log, config, api) {
     this.log = log;
@@ -44,5 +44,5 @@ class InkbirdPlatform {
   }
 }
 
-
 export default InkbirdPlatform;
+
