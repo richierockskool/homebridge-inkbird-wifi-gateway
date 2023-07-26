@@ -1,9 +1,0 @@
-{
-  "watch": [
-    "src"
-  ],
-  "ext": "ts",
-  "ignore": ["src/**/*.spec.ts"],
-  "exec": "tsc && homebridge -I -C",
-  "signal": "SIGTERM"
-  }
