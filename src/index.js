@@ -1,5 +1,3 @@
-
-
 import InkbirdPlatform from './InkbirdPlatform.js';
 
 export default function (homebridge) {

@@ -1,4 +1,3 @@
-
 import BleScanner from './BleScanner.js';
 import IBSTH1Accessory from './IBSTH1Accessory.js';
 import IBSPO1Accessory from './IBSPO1Accessory.js';
