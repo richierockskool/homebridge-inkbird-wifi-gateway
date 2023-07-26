@@ -135,3 +135,5 @@ web_modules/
 
 # webstorm
 .idea
+
+.DS_Store
