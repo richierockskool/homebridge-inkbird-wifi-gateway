@@ -24,9 +24,9 @@ export class InkbirdPlatform {
     this.api.on('didFinishLaunching', () => {
       log.debug('Executed didFinishLaunching callback');
       // run the method to discover / register your devices as accessories
-      
+
     });
-  
+
 
 
 
