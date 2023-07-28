@@ -1,11 +1,5 @@
 {
-  "parser": "@typescript-eslint/parser",
-  "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended" // uses the recommended rules from the @typescript-eslint/eslint-plugin
-  ],
-  "parserOptions": {
+    "parserOptions": {
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
