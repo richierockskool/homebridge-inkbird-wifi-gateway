@@ -29,7 +29,7 @@
   "main": "src/index.js",
   "scripts": {
     "lint": "eslint src/**.js --max-warnings=0",
-    "rebuild": "rm -rf package-lock.json && rm -rf node_modules && npm install"
+    "build": "react-scripts build"
   },
   "keywords": [
     "homebridge-plugin",
