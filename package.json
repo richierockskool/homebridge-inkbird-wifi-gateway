@@ -28,7 +28,8 @@
   },
   "main": "src/index.js",
   "scripts": {
-    "lint": "eslint src/**.js --max-warnings=0"
+    "lint": "eslint src/**.js --max-warnings=0",
+    "build": "react-scripts build"
   },
   "keywords": [
     "homebridge-plugin",
