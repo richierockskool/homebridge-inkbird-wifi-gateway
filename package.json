@@ -28,7 +28,10 @@
   },
   "main": "src/index.js",
   "scripts": {
-    "lint": "eslint src/**.js --max-warnings=0"
+    "lint": "eslint src/**.js --max-warnings=0",
+    "watch": "npm run build && npm link && nodemon",
+    "build": "rimraf ./dist && tsc",
+    "prepublishOnly": "npm run lint && npm run build"
   },
   "keywords": [
     "homebridge-plugin",
@@ -42,7 +45,8 @@
     "@typescript-eslint/eslint-plugin": "^6.2.0",
     "eslint": "^8.42.0",
     "homebridge": "^1.6.1",
-    "rimraf": "^5.0.1"
+    "rimraf": "^5.0.1",
+    "typescript": "^5.1.6"
   },
   "dependencies": {
     "@abandonware/noble": "^1.9.2-21",
