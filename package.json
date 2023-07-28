@@ -39,6 +39,7 @@
     "homebridge"
   ],
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.2.0",
     "eslint": "^8.42.0",
     "homebridge": "^1.6.1"
   },
