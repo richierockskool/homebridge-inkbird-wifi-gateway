@@ -7,16 +7,16 @@ export class InkbirdPlatform {
 
   constructor(log, config, api) {
     this.log = log;
-    this.config=config;
-    this.email=config.email;
-    this.password=config.password;
+    this.config = config;
+    this.email = config.email;
+    this.password = config.password;
     this.accessToken = config.accessToken;
     this.device = config.devices;
     this.myAccessories = [];
-    this.api=api;
+    this.api = api;
 
 
-    this.log.debug('Finished initializing platform:', this.config.name);
+    this.log.debug('Finished initializing Inkbird Platform:', this.config.name);
 
     // When this event is fired it means Homebridge has restored all cached accessories from disk.
     // Dynamic Platform plugins should only register new accessories after this event was fired,
@@ -28,15 +28,10 @@ export class InkbirdPlatform {
 
     });
 
-    accessory(accessory. PlatformAccessory) ;{
-      this.log.info('Loading accessory from cache:', accessory.displayName);
 
-      // add the restored accessory to the accessories cache so we can track if it has already been registered
-      this.accessories.push(accessory);
-    }
 
-    // Boot scanner and register devices to scanner
-    new api.hap.Service.TemperatureSensor;
+
+    // Boot scanner and register devices to scanner new api.hap.Service.TemperatureSensor;
     this.scanner = new BleScanner(this.log);
 
     for (let device of this.devices = '2') {
@@ -57,8 +52,9 @@ export class InkbirdPlatform {
 
   accessories(callback) {
     callback(this.myAccessories);
-  }
-}
 
+
+  };
+}
 export default InkbirdPlatform;
 
