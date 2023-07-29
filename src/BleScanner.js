@@ -21,13 +21,14 @@ class BleScanner extends Emitter {
       }
     });
 
-    // eslint-disable-next-line no-undef
+
     this.on('discover', (peripheral) => {
       if (this.devices.has(peripheral.address)) {
         let buffer= peripheral.advertisement.manufacturerData;
         const expectedCrc16 = buffer[6] * 256 + buffer[5];
-        // eslint-disable-next-line eqeqeq
-        if (expectedCrc16 != this._getCrc16(buffer.slice(0, 5))) {
+
+
+        if (expectedCrc16 !==this._getCrc16(buffer.slice(0, 5))) {
           this.log('CRC Error', buffer.toString('hex'));
           return this;
         } else {
