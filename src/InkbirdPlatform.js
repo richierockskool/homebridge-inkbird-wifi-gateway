@@ -14,7 +14,9 @@ export class InkbirdPlatform {
     this.device = config.devices;
     this.myAccessories = [];
     this.api = api;
-
+    if(!config.email || !config.password){
+      this.log.error('Valid email and password are required in order to communicate with the inkbird, please check the plugin config')
+    }
 
 
 
