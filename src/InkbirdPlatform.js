@@ -16,7 +16,7 @@ export class InkbirdPlatform {
     this.api = api;
 
 
-    this.log.debug('Finished initializing Inkbird Platform:', this.config.name);
+
 
     // When this event is fired it means Homebridge has restored all cached accessories from disk.
     // Dynamic Platform plugins should only register new accessories after this event was fired,
@@ -26,9 +26,35 @@ export class InkbirdPlatform {
       log.debug('Executed didFinishLaunching callback');
       // run the method to discover / register your devices as accessories
 
+
     });
-
-
+    const devicesDiscovered = [
+      {
+        UniqueId: 'IBS-M1S',
+        DisplayName: 'Backyard Gateway',
+      },
+      {
+        UniqueId: 'IBS-PO1/B',
+        DisplayName: 'Pool Temperature Sensor',
+      },
+      {
+        UniqueId: 'IBS-TH1',
+        DisplayName: 'Hot Tub Temperature Sensor',
+      },
+    ];
+    for (const deviceDiscovered of devicesDiscovered) {
+      const uuid = this.api.hap.uuid.generate(deviceDiscovered.UniqueId);
+      const existingAccessory = this.accessories(accessory => accessory.UUID === uuid);
+      if (existingAccessory) {
+        // the accessory already exists
+        this.log.info('Restoring existing accessory from cache:', existingAccessory.displayName);
+        new InkbirdPlatform(this, existingAccessory);
+      } else {
+        this.log.info(InkbirdPlatform);
+        const accessory = new this.api.platformAccessory('Inkbird Temperature Sensor', uuid);
+        accessory.context.device = InkbirdPlatform;
+      }
+    }
 
 
     // Boot scanner and register devices to scanner new api.hap.Service.TemperatureSensor;
