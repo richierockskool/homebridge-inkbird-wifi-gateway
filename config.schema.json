@@ -74,36 +74,41 @@
       "minimum" : 0,
       "maximum" : 4
    },
-   "devices": {
-    "title": "Devices",
-    "description": "leave it empty to enable all device in account",
-    "type": "array",
-    "items": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "title": "Device ID",
-          "type": "string",
-          "required": true
-        },
-        "name": {
-          "title": "Device Name",
-          "type": "string"
-        },
-        "type": {
-          "title": "Device Type",
-          "type": "string",
-          "enum": [
-            "IBS-M1S WiFi Gateway",
-            "IBS-M2S WiFi Gateway"
-          ]
+   "connection": {
+    "type": "string",
+    "title": "Connection Type",
+    "oneOf": [
+      {
+        "title": "Hybrid (Default)",
+        "enum": ["default"]
+      },
+      {
+        "title": "Force Cloud Control",
+        "enum": ["cloud"]
+      },
+      {
+        "title": "Force Local Control (with configured IP)",
+        "enum": ["local"]
+      }
+    ],
+    "condition": {
+      "functionBody": "return (model.singleDevices && model.singleDevices[arrayIndices] && model.singleDevices[arrayIndices].serialNumber && model.singleDevices[arrayIndices].serialNumber.length === 32 && !model.singleDevices[arrayIndices].ignoreDevice && model.username && model.password);"
+    },
+   "deviceUrl": {
+    "title": "Device IP",
+    "description": "Enter the IP address of this device for local connection.",
+    "type": "string",
+    "format": "ipv4",
+    "condition": {
+      "functionBody": "return (model.singleDevices && model.singleDevices[arrayIndices] && model.singleDevices[arrayIndices].serialNumber && model.singleDevices[arrayIndices].serialNumber.length === 32 && ((!model.username && !model.password && model.userkey) || (model.username && model.password && ((model.connection === 'local' && [undefined, 'local'].includes(model.singleDevices[arrayIndices].connection)) || (model.connection !== 'local' && model.singleDevices[arrayIndices].connection === 'local')))));"
+    }
       
   }
 
 } 
 }
-      }
       
-      }
-      }
-    }
+}   
+} 
+      
+    

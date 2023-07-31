@@ -3,7 +3,7 @@ import IBSTH1Accessory from './IBSTH1Accessory.js';
 import IBSPO1Accessory from './IBSPO1Accessory.js';
 
 
-class InkbirdPlatform {
+export class InkbirdPlatform {
 
   constructor(log, config, api) {
     this.log = log;
@@ -14,10 +14,10 @@ class InkbirdPlatform {
     this.device = config.devices;
     this.myAccessories = [];
     this.api = api;
+    this.localUUIDs = [];
     if(!config.email || !config.password){
       this.log.error('Valid email and password are required in order to communicate with the inkbird, please check the plugin config')
     }
-
 
 
     // When this event is fired it means Homebridge has restored all cached accessories from disk.
@@ -57,7 +57,24 @@ class InkbirdPlatform {
         accessory.context.device = InkbirdPlatform;
       }
     }
+    // If the user has configured cloud username and password then get a device list
+    let cloudDevices = [];
+    try {
+      if (!this.config.username || !this.config.password) {
+        throw new Error(platformLang.missingCreds);
+      }
+      this.cloudClient = new httpClient(this);
+      this.accountDetails = this.cloudClient.login();
+      cloudDevices = this.cloudClient.getDevices();
 
+      // Initialise the cloud configured devices into Homebridge
+      cloudDevices.forEach((device) => this.initialiseDevice(device));
+    } catch (err) {
+      this.cloudClient = false;
+      this.accountDetails = {
+        key: this.config.userkey,
+      };
+    }
 
     // Boot scanner and register devices to scanner new api.hap.Service.TemperatureSensor;
     this.scanner = new BleScanner(this.log);
