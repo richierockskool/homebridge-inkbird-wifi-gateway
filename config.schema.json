@@ -22,25 +22,15 @@
           "title": "Password",
           "type": "string",
           "placeholder": "password",
-          "required": true
-        
-        
+          "required": true 
       },
-      "accessory": {
-        "type": "string",
-        "enum": ["IBS-MS1", "IBS-PO1", "IBS-TH1"],
-        "title": "Model number (i.e. IBS-MS1, leave empty if not sure)",
-        "required": true
-      },
-    
+      
       "host": {
         "title": "IP Address / Hostname",
         "type": "string",
         "required": true,
         "format": "hostname"
-      
-
-     },
+      },
      "mac_address": {
         "type": "string",
         "title": "Bluetooth MAC address for sensor (xx:xx:xx:xx:xx:xx). If empty, then first sensor to be found will be used - see log for MAC found.",
@@ -58,12 +48,6 @@
       "required": true,
       "default": false
     },
-    "showLimitsSensor": {
-      "title": "Expose Occupancy Sensors in HomeKit for Temperature high/low limits",
-      "type": "boolean",
-      "required": true,
-      "default": false
-    },
     "useTemperatureDisplay": {
       "title": "Display as Temperature Display in HomeKit",
       "type": "boolean",
@@ -71,8 +55,7 @@
       "default": true
       },
 
-  
-     "update_interval": {
+      "update_interval": {
         "type": "number",
         "title": "Update interval in minutes",
         "required": false,
@@ -90,10 +73,37 @@
       "required": false,
       "minimum" : 0,
       "maximum" : 4
-   }
+   },
+   "devices": {
+    "title": "Devices",
+    "description": "leave it empty to enable all device in account",
+    "type": "array",
+    "items": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "Device ID",
+          "type": "string",
+          "required": true
+        },
+        "name": {
+          "title": "Device Name",
+          "type": "string"
+        },
+        "type": {
+          "title": "Device Type",
+          "type": "string",
+          "enum": [
+            "IBS-M1S WiFi Gateway",
+            "IBS-M2S WiFi Gateway"
+          ]
       
   }
 
 } 
 }
-
+      }
+      
+      }
+      }
+    }
