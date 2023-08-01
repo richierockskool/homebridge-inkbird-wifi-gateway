@@ -1,6 +1,7 @@
 import BleScanner from './BleScanner.js';
 import IBSTH1Accessory from './IBSTH1Accessory.js';
 import IBSPO1Accessory from './IBSPO1Accessory.js';
+import IBSM1SGateway from './IBSM1SGateway.js';
 
 
 export class InkbirdPlatform {
@@ -81,6 +82,11 @@ export class InkbirdPlatform {
 
     for (let device of this.devices = '2') {
       this.scanner.addDevice(device.deviceId);
+      if (device.type === 'IBSM1S') {
+
+        let accessory = new IBSM1SGateway(this.log, this.scanner, device, global.homebridge);
+        this.myAccessories.push(accessory);
+      }
       if (device.type === 'IBSTH1') {
 
         let accessory = new IBSTH1Accessory(this.log, this.scanner, device, global.homebridge);
