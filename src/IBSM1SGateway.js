@@ -1,13 +1,16 @@
 class IBSM1SGateway {
 
-  constructor(log, config, api, scanner, device) {
+  constructor(log, config, api, device) {
 
     this.log = log;
     this.name = device.name;
     this.config = config;
     this.api = api;
 
-    scanner.on(device.deviceId, this._handleDeviceEvent.bind(this));
+    this.Service = this.api.hap.Service;
+    this.Characteristic = this.api.hap.Characteristic;
+
+    this.name = config.name;
 
     // create a new Bridge Configuration service
     this.service = new this.Service(this.Service.BridgeConfiguration);
@@ -22,14 +25,13 @@ class IBSM1SGateway {
     // Handle requests to get the current value of the "Discover Bridged Accessories" characteristic
     //
     handleDiscoverBridgedAccessoriesGet() ;{
-      this.log.debug('Triggered GET DiscoverBridgedAccessories');
+      this.log.debug('Triggered GET InkbirdWifiGateway');
 
       // set this to a valid value for DiscoverBridgedAccessories
       const currentValue = 1;
 
       return currentValue;
     }
-
 
   }
 
