@@ -98,6 +98,7 @@ export class InkbirdPlatform {
         this.myAccessories.push(accessory);
       }
 
+
     }
   }
 
@@ -106,6 +107,12 @@ export class InkbirdPlatform {
 
 
   };
+
+
+  catch(err){
+    this.log.error('Error updating service %s', err)
+  }
+
 }
 export default InkbirdPlatform;
 
