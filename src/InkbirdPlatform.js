@@ -86,7 +86,11 @@ export class InkbirdPlatform {
         key: this.config.userkey,
       };
     }
-
+    'bridge';
+    let bridgeAccessory
+    let bridgeService
+    this.log.debug('Adding Bridge Device')
+    this.log.debug('Found device %s', devicesDiscovered.name)
 
     // Boot scanner and register devices to scanner new api.hap.Service.TemperatureSensor;
     this.scanner = new BleScanner(this.log);
