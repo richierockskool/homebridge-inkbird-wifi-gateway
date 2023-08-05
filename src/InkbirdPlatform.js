@@ -91,6 +91,14 @@ export class InkbirdPlatform {
     let bridgeService
     this.log.debug('Adding Bridge Device')
     this.log.debug('Found device %s', devicesDiscovered.name)
+    switch (devicesDiscovered.hardware_version){
+      case 'IBS-M1S',
+
+      // Create and configure Gen 1Bridge Service
+
+      this.log.warn(devicesDiscovered):
+
+    }
 
     // Boot scanner and register devices to scanner new api.hap.Service.TemperatureSensor;
     this.scanner = new BleScanner(this.log);
