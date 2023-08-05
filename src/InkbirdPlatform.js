@@ -4,6 +4,7 @@ import IBSPO1Accessory from './IBSPO1Accessory.js';
 import IBSM1SGateway from './IBSM1SGateway.js';
 
 
+
 export class InkbirdPlatform {
 
   constructor(log, config, api) {
@@ -16,6 +17,15 @@ export class InkbirdPlatform {
     this.myAccessories = [];
     this.api = api;
     this.localUUIDs = [];
+    this.showBridge=config.showBridge;
+    this.meshNetwork
+    this.meshId
+    this.networkTopology
+    this.networkTopologyId
+    this.uuid = ('hap-nodejs').uuid;
+    this.Service = ('hap-nodejs').Service;
+    this.Characteristic = ('hap-nodejs').Characteristic;
+
     if(!config.email || !config.password){
       this.log.error('Valid email and password are required in order to communicate with the inkbird, please check the plugin config')
     }
@@ -76,6 +86,7 @@ export class InkbirdPlatform {
         key: this.config.userkey,
       };
     }
+
 
     // Boot scanner and register devices to scanner new api.hap.Service.TemperatureSensor;
     this.scanner = new BleScanner(this.log);
