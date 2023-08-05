@@ -29,6 +29,9 @@ export class InkbirdPlatform {
     if(!config.email || !config.password){
       this.log.error('Valid email and password are required in order to communicate with the inkbird, please check the plugin config')
     }
+    this.Service = this.api.hap.Service;
+    this.Characteristic = this.api.hap.Characteristic;
+    this.name = config.name;
 
 
     this.log.info('Starting Inkbird Platform using homebridge API', api.version)
@@ -97,6 +100,12 @@ export class InkbirdPlatform {
       // Create and configure Gen 1Bridge Service
 
       this.log.warn(devicesDiscovered):
+
+        this.log.debug('Creating and configuring new bridge')
+        bridgeAccessory=(devicesDiscovered)
+        bridgeService=(Service.Tunnel)
+        bridgeService=(devicesDiscovered)
+
 
     }
 
