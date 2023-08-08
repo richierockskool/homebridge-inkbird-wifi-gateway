@@ -47,7 +47,7 @@ export class InkbirdPlatform {
     const devicesDiscovered = [
       {
         UniqueId: 'IBS-M1S',
-        DisplayName: 'Backyard Gateway',
+        DisplayName: 'Inkbird Wifi Gateway',
       },
       {
         UniqueId: 'IBS-PO1/B',
