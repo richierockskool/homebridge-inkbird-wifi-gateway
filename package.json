@@ -45,6 +45,7 @@
   },
   "dependencies": {
     "@abandonware/noble": "^1.9.2-21",
+    "eslint-plugin-import": "^2.28.0",
     "hashmap": "^2.4.0",
     "lodash": "^4.17.21",
     "lodash.debounce": "^4.0.8",
