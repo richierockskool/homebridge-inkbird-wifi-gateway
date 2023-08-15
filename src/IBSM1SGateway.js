@@ -22,6 +22,8 @@ class IBSM1SGateway {
     this.service.getCharacteristic(this.Characteristic.DiscoveredBridgedAccessories)
       .onGet(this.handleDiscoveredBridgedAccessoriesGet.bind(this));
 
+    this.bridgeService.getCharacteristic(Characteristic.StatusFault).updateValue(!devicesDiscovered.is_connected)
+
     // Handle requests to get the current value of the "Discover Bridged Accessories" characteristic
     //
     handleDiscoverBridgedAccessoriesGet() ;{

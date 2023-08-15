@@ -2,7 +2,8 @@ import BleScanner from './BleScanner.js';
 import IBSTH1Accessory from './IBSTH1Accessory.js';
 import IBSPO1Accessory from './IBSPO1Accessory.js';
 import IBSM1SGateway from './IBSM1SGateway.js';
-
+import { v4 as uuidv4 } from 'uuid';
+uuidv4(); // ⇨ '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d'
 
 
 export class InkbirdPlatform {
