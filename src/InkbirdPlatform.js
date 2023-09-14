@@ -44,6 +44,7 @@ export class InkbirdPlatform {
 
 
       });
+
     }
     const devicesDiscovered = [
       {
@@ -67,7 +68,7 @@ export class InkbirdPlatform {
         this.log.info('Restoring existing accessory from cache:', existingAccessory.displayName);
         new InkbirdPlatform(this, existingAccessory);
       } else {
-        this.log.info(InkbirdPlatform);
+        this.log.info('InkbirdPlatform');
         const accessory = new this.api.platformAccessory('Inkbird Temperature Sensor', uuid);
         accessory.context.device = InkbirdPlatform;
       }
@@ -93,22 +94,29 @@ export class InkbirdPlatform {
     'bridge';
     let bridgeAccessory
     let bridgeService
+    if(!this.showBridge){
+      this.log.info('Skipping Bridge %s %s based on config', devicesDiscovered.hardware_version, devicesDiscovered.name)
+      return
+    }
     this.log.debug('Adding Bridge Device')
     this.log.debug('Found device %s', devicesDiscovered.name)
     switch (devicesDiscovered.hardware_version){
       case 'IBS-M1S',
 
-      // Create and configure Gen 1Bridge Service
+      // Create and configure Inkbird Wifi Gateway Bridge Service
 
       this.log.warn(devicesDiscovered):
-
         this.log.debug('Creating and configuring new bridge')
-        bridgeAccessory=(devicesDiscovered)
-        bridgeService=(Service.Tunnel)
-        bridgeService=(devicesDiscovered)
 
+        // set current device status
+
+
+        this.log.info('Adding Inkbird Wifi Gateway Bridge')
+        this.log.debug('Registering platform accessory')
 
     }
+
+
 
     // Boot scanner and register devices to scanner new api.hap.Service.TemperatureSensor;
     this.scanner = new BleScanner(this.log);
@@ -132,6 +140,38 @@ export class InkbirdPlatform {
       }
 
 
+      'bridge';
+      let bridgeAccessory
+      if(this.showBridge){
+        bridgeAccessory=this.accessories[('hap-nodejs').uuid]
+        if(!bridgeAccessory){
+          return
+        }
+        activeService=bridgeAccessory.getServiceById(Service.Tunnel, jsonBody.device_id)
+      }
+      switch (jsonBody.event){
+        case 'device_connected':
+          this.log.info('%s connected at %s', deviceName, new Date(jsonBody.timestamp).toString())
+          if(this.showBridge){
+            activeService.getCharacteristic(Characteristic.StatusFault).updateValue(Characteristic.StatusFault.NO_FAULT)
+          }
+          break
+        case 'device_disconnected':
+          this.log.warn('%s disconnected at %s! non-respon in Homekit until restored.', deviceName, new Date(jsonBody.timestamp).toString())
+          if(this.showBridge){
+            activeService.getCharacteristic(Characteristic.StatusFault).updateValue(Characteristic.StatusFault.GENERAL_FAULT)
+          }
+          break
+        case 'device_idle':
+        //do nothing
+          break
+        case 'change_mode':
+        //do nothing
+          break
+        default:
+          this.log.warn('Unknown bridge device message received: %s', jsonBody.event)
+          break
+      }
     }
   }
 
