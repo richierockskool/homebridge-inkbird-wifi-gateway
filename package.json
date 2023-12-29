@@ -47,7 +47,7 @@
     "homebridge": "^1.7.0"
   },
   "dependencies": {
-    "@abandonware/noble": "^1.9.2-23",
+    "@abandonware/noble": "^1.9.2-19",
     "hashmap": "^2.4.0",
     "lodash": "^4.17.21",
     "lodash.debounce": "^4.0.8",
