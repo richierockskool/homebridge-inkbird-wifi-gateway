@@ -23,8 +23,8 @@
     }
   ],
   "engines": {
-    "node": ">=16.20.2",
-    "homebridge": ">=1.5"
+    "node": ">=18.15.0",
+    "homebridge": ">=1.7"
   },
   "main": "src/index.js",
   "scripts": {
