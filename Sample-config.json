@@ -6,8 +6,8 @@
 		"pin": "206-99-271"
 	},
 	"description": "This is an example configuration file with an Inkbird platform. It refers to a single Inkbird accessory of type IBSM1S.",
-	"platforms": [
-    {
+	"platforms": {
+    
 		"platform": "homebridge-inkbird-wifi-gateway",
 		"name": "Inkbird Wifi Gateway",
 		"devices": [
@@ -42,6 +42,24 @@
     "title": "Bluetooth MAC address for sensor (xx:xx:xx:xx:xx:xx). If empty, then first sensor to be found will be used - see log for MAC found.",
     "required": false
  },
+ "showBridge": {
+  "title": "Expose WiFi Hub in HomeKit",
+  "type": "boolean",
+  "required": true,
+  "default": false
+},
+"showTempSensor": {
+  "title": "Expose Temperature Sensors in HomeKit",
+  "type": "boolean",
+  "required": true,
+  "default": false
+},
+"useTemperatureDisplay": {
+  "title": "Display as Temperature Display in HomeKit",
+  "type": "boolean",
+  "required": true,
+  "default": true
+  },
  "update_interval": {
   "type": "number",
   "title": "Update interval in seconds",
@@ -60,7 +78,17 @@
     "required": false,
     "minimum" : 0,
     "maximum" : 4
-  }
+  },
+  "deviceUrl": {
+    "title": "Device IP",
+    "description": "Enter the IP address of this device for local connection.",
+    "type": "string",
+    "format": "ipv4",
+    "condition": {
+      "functionBody": "return (model.singleDevices && model.singleDevices[arrayIndices] && model.singleDevices[arrayIndices].serialNumber && model.singleDevices[arrayIndices].serialNumber.length === 32 && ((!model.username && !model.password && model.userkey) || (model.username && model.password && ((model.connection === 'local' && [undefined, 'local'].includes(model.singleDevices[arrayIndices].connection)) || (model.connection !== 'local' && model.singleDevices[arrayIndices].connection === 'local')))));"
+    }
+  
 	}
-]
+
+}
 }
