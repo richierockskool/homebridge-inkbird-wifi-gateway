@@ -4,12 +4,14 @@ import IBSPO1Accessory from './IBSPO1Accessory.js';
 import IBSM1SGateway from './IBSM1SGateway.js';
 import { v4 as uuidv4 } from 'uuid';
 uuidv4(); // ⇨ '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d'
-
+import axios from 'axios';
 
 export class InkbirdPlatform {
 
   constructor(log, config, api) {
     this.log = log;
+    this.ipAddress = config.ipAddress;
+    this.port = config.port;
     this.config = config;
     this.email = config.email;
     this.password = config.password;
@@ -44,6 +46,16 @@ export class InkbirdPlatform {
 
 
       });
+
+      // Method to send a command to the gateway device
+
+      try {
+        const response = axios.post(`http://${this.ipAddress}:${this.port}/your-endpoint`, { command });
+        this.log('Command sent successfully:', response.data);
+      } catch (error) {
+        this.log('Error sending command:', error.message);
+      }
+
 
     }
     const devicesDiscovered = [
