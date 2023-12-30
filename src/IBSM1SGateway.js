@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 class IBSM1SGateway {
 
   constructor(log, config, api, device) {
@@ -6,11 +8,22 @@ class IBSM1SGateway {
     this.name = device.name;
     this.config = config;
     this.api = api;
+    this.ipAddress = config.ipAddress;
+    this.port = config.port;
 
     this.Service = this.api.hap.Service;
     this.Characteristic = this.api.hap.Characteristic;
 
     this.name = config.name;
+
+    // Method to send a command to the gateway device
+
+    try {
+      const response = axios.post(`http://${this.ipAddress}:${this.port}/your-endpoint`, { command });
+      this.log('Command sent successfully:', response.data);
+    } catch (error) {
+      this.log('Error sending command:', error.message);
+    }
 
     // create a new Bridge Configuration service
     this.service = new this.Service(this.Service.BridgeConfiguration);
