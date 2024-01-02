@@ -14,7 +14,6 @@ export class InkbirdPlatform {
     this.port = config.port;
     this.config = config;
     this.email = config.email;
-    this.password = config.password;
     this.accessToken = config.accessToken;
     this.device = config.devices;
     this.myAccessories = [];
@@ -29,9 +28,7 @@ export class InkbirdPlatform {
     this.Service = ('hap-nodejs').Service;
     this.Characteristic = ('hap-nodejs').Characteristic;
 
-    if(!config.email || !config.password){
-      this.log.error('Valid email and password are required in order to communicate with the inkbird, please check the plugin config')
-    }
+
     this.Service = this.api.hap.Service;
     this.Characteristic = this.api.hap.Characteristic;
     this.name = config.name;
